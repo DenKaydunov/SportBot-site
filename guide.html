@@ -249,6 +249,18 @@
             font-size: 0.95rem;
         }
 
+        .rank-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 4px;
+        }
+        .rank-e { background: #e0e0e0; color: #555; }
+        .rank-d { background: #fde68a; color: #92400e; }
+        .rank-c { background: #fca5a5; color: #7f1d1d; }
+
         /* CTA Button */
         .btn-primary {
             display: inline-block;
@@ -376,7 +388,10 @@
                     <li><a href="#ranks">Ранги</a></li>
                     <li><a href="#achievements">Достижения</a></li>
                     <li><a href="#battles">Битвы</a></li>
-                    <li><a href="#guild-quest">Квесты</a></li>
+                    <li><a href="#guild-quest">Гильдия</a></li>
+                    <li><a href="#voice">Голос</a></li>
+                    <li><a href="#social">Рейтинг</a></li>
+                    <li><a href="#adventure">Приключение</a></li>
                     <li><a href="commands.html">📖 Все команды</a></li>
                     <li><a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank">⚔️ Бот</a></li>
                 </ul>
@@ -391,8 +406,20 @@
                 Всё что нужно знать о SportBot — от первых шагов до легендарных достижений
             </p>
 
-            <div class="success-box">
-            </div>
+            <nav style="background: #1A1A1A; border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(127,217,87,0.2);">
+                <p style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1.5rem; color: #7FD957; letter-spacing: 0.05em; text-transform: uppercase;">Содержание</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.75rem;">
+                    <a href="#commands" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📝</span> Команды и профиль</a>
+                    <a href="#ranks" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚡</span> Система рангов и опыт</a>
+                    <a href="#achievements" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">🏆</span> Достижения</a>
+                    <a href="#battles" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚔️</span> Монстры и рейд-боссы</a>
+                    <a href="#guild-quest" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">🏰</span> Гильдия — квесты и зелья</a>
+                    <a href="#voice" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">🎙️</span> Голосовые команды</a>
+                    <a href="#adventure" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📜</span> RPG-приключения</a>
+                    <a href="#social" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">👥</span> Рейтинг, отряд, подписки</a>
+                    <a href="#settings" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚙️</span> Настройки</a>
+                </div>
+            </nav>
         </section>
 
         <section id="commands">
@@ -446,7 +473,22 @@
             <p>Открывает интерактивный <strong>Telegram Mini App</strong> с календарём тренировок.</p>
 
             <h4>🧙 Команда /hero</h4>
-            <p>Открывает <strong>Telegram Mini App</strong> с профилем героя — визуальная карточка с рангом, опытом, прогрессом по упражнениям и ascii-артом персонажа.</p>
+            <p>Открывает <strong>Telegram Mini App</strong> с полным профилем героя — аватар, ранг, XP прогресс-бар, статистика по упражнениям (всего / максимум), текущая серия, баланс монет и счётчик отряда.</p>
+
+            <h4>⚔️ Команда /rating</h4>
+            <p>Показывает лидерборд с выбором периода через кнопки: <strong>Сегодня, Вчера, Неделя, Месяц, Год, Всё время</strong>. Видишь своё место среди всех героев.</p>
+
+            <h4>👥 Команда /subscribe</h4>
+            <p>Управление подписками: кнопки «Подписаться» и «Отписаться» с постраничным списком пользователей. Подписчики получают уведомления о тренировках и рекордах друг друга.</p>
+
+            <h4>🏰 Команда /guild</h4>
+            <p>Открывает <strong>Telegram Mini App</strong> Гильдии Героев — магазин зелий урона, ежедневные квесты с монстрами, баланс золота и активная битва.</p>
+
+            <h4>📜 Команда /adventure</h4>
+            <p>Запускает интерактивное RPG-приключение с разветвлённым сюжетом, физическими испытаниями и инвентарём.</p>
+
+            <h4>⚔️ Команда /monster</h4>
+            <p>Показывает статус текущей личной битвы с монстром или активный рейд-босс — HP, полоса прогресса и нанесённый урон.</p>
         </section>
 
         <section id="ranks">
@@ -468,11 +510,34 @@
                 <tbody>
                     <tr><td>1</td><td>Seed</td><td>Зерно</td><td>0</td></tr>
                     <tr><td>2</td><td>Sprout</td><td>Росток</td><td>100</td></tr>
+                    <tr><td>3</td><td>Youngster</td><td>Малец</td><td>300</td></tr>
+                    <tr><td>4</td><td>Novice</td><td>Новичок</td><td>600</td></tr>
                     <tr><td>5</td><td>Youth</td><td>Отрок</td><td>1,000</td></tr>
+                    <tr><td>6</td><td>Man</td><td>Мужик</td><td>1,500</td></tr>
+                    <tr><td>7</td><td>Militiaman</td><td>Ополченец</td><td>2,200</td></tr>
+                    <tr><td>8</td><td>Decurion</td><td>Десятник</td><td>3,000</td></tr>
+                    <tr><td>9</td><td>Kozhemyaka</td><td>Кожемяка</td><td>4,000</td></tr>
                     <tr><td>10</td><td>Warrior</td><td>Ратник</td><td>5,200</td></tr>
+                    <tr><td>11</td><td>Centurion</td><td>Сотник</td><td>6,600</td></tr>
+                    <tr><td>12</td><td>Druzhinnik</td><td>Дружинник</td><td>8,200</td></tr>
                     <tr><td>13</td><td>Bogatyr</td><td>Богатырь</td><td>10,000</td></tr>
+                    <tr><td>14</td><td>Varangian</td><td>Варяг</td><td>12,000</td></tr>
+                    <tr><td>15</td><td>Body Smith</td><td>Кузнец тела</td><td>14,500</td></tr>
+                    <tr><td>16</td><td>Thousandman</td><td>Тысячник</td><td>17,500</td></tr>
+                    <tr><td>17</td><td>Master</td><td>Хозяин</td><td>21,000</td></tr>
                     <tr><td>18</td><td>Voivode</td><td>Воевода</td><td>25,000</td></tr>
+                    <tr><td>19</td><td>Grey Wolf</td><td>Серый волк</td><td>30,000</td></tr>
+                    <tr><td>20</td><td>Bear</td><td>Медведь</td><td>36,000</td></tr>
+                    <tr><td>21</td><td>Fierce Beast</td><td>Лютый зверь</td><td>43,000</td></tr>
+                    <tr><td>22</td><td>Leshy</td><td>Леший</td><td>51,000</td></tr>
+                    <tr><td>23</td><td>Volkhv</td><td>Волхв</td><td>60,000</td></tr>
+                    <tr><td>24</td><td>Steel Bear</td><td>Стальной Медведь</td><td>70,000</td></tr>
+                    <tr><td>25</td><td>Son of Perun</td><td>Сын Перуна</td><td>81,000</td></tr>
+                    <tr><td>26</td><td>Cyber Knight</td><td>Кибервитязь</td><td>93,000</td></tr>
+                    <tr><td>27</td><td>Ancient Power</td><td>Древняя мощь</td><td>106,000</td></tr>
+                    <tr><td>28</td><td>Cyber Bear</td><td>Кибер-медведь</td><td>120,000</td></tr>
                     <tr><td>29</td><td>Deity</td><td>Божество</td><td>135,000</td></tr>
+                    <tr style="background: #fef3c7;"><td>30</td><td>???</td><td>Кто ты, тварь?!</td><td>150,000+</td></tr>
                 </tbody>
             </table>
             </div>
@@ -555,64 +620,64 @@
         <section id="battles">
             <h2>⚔️ Боевая система</h2>
 
-            <h3>👹 Личные монстры</h3>
+            <h3>👹 Монстры</h3>
             <p><strong>Концепция:</strong> У каждого пользователя свой персональный монстр. Тренировки наносят урон. Победа = игровая награда!</p>
 
             <div class="monster-gallery">
                 <div class="monster-card">
                     <img src="img/monster/0006 Giant Rat 30 HP.png" alt="Гигантская крыса">
                     <div class="monster-name">🐀 Гигантская крыса</div>
-                    <div class="monster-stats">HP: 30 | Ранг E | Награда: 1 монета</div>
+                    <div class="monster-stats"><span class="rank-badge rank-e">Ранг E</span> HP: 30 · Награда: 1 монета</div>
                 </div>
                 <div class="monster-card">
                     <img src="img/monster/0001 Slime 50 HP.png" alt="Слизень">
                     <div class="monster-name">🟢 Слизень</div>
-                    <div class="monster-stats">HP: 50 | Ранг E | Награда: 1 монета</div>
+                    <div class="monster-stats"><span class="rank-badge rank-e">Ранг E</span> HP: 50 · Награда: 1 монета</div>
                 </div>
                 <div class="monster-card">
                     <img src="img/monster/0002 Goblin 75 HP.png" alt="Гоблин">
                     <div class="monster-name">👺 Гоблин</div>
-                    <div class="monster-stats">HP: 75 | Ранг E | Награда: 1 монета</div>
+                    <div class="monster-stats"><span class="rank-badge rank-e">Ранг E</span> HP: 75 · Награда: 1 монета</div>
                 </div>
                 <div class="monster-card">
                     <img src="img/monster/0008 Wild Dog 80 HP.png" alt="Дикая собака">
                     <div class="monster-name">🐕 Дикая собака</div>
-                    <div class="monster-stats">HP: 80 | Ранг E | Награда: 1 монета</div>
+                    <div class="monster-stats"><span class="rank-badge rank-e">Ранг E</span> HP: 80 · Награда: 1 монета</div>
                 </div>
                 <div class="monster-card">
                     <img src="img/monster/0003 Zombie 100 HP.png" alt="Зомби">
                     <div class="monster-name">🧟 Зомби</div>
-                    <div class="monster-stats">HP: 100 | Ранг E | Награда: 1 монета</div>
+                    <div class="monster-stats"><span class="rank-badge rank-e">Ранг E</span> HP: 100 · Награда: 1 монета</div>
                 </div>
                 <div class="monster-card">
                     <img src="img/monster/0007 Kobold 120 HP.png" alt="Кобольд">
                     <div class="monster-name">🦎 Кобольд</div>
-                    <div class="monster-stats">HP: 120 | Ранг D | Награда: 2 монеты | 🔒 1 реферал</div>
+                    <div class="monster-stats"><span class="rank-badge rank-d">Ранг D</span> HP: 120 · Награда: 2 монеты · 🔒 1 реферал</div>
                 </div>
                 <div class="monster-card">
                     <img src="img/monster/0005 Skeleton 140 HP.png" alt="Скелет">
                     <div class="monster-name">💀 Скелет</div>
-                    <div class="monster-stats">HP: 140 | Ранг D | Награда: 2 монеты | 🔒 1 реферал</div>
+                    <div class="monster-stats"><span class="rank-badge rank-d">Ранг D</span> HP: 140 · Награда: 2 монеты · 🔒 1 реферал</div>
                 </div>
                 <div class="monster-card">
                     <img src="img/monster/0004 Creeper 150 HP.png" alt="Крипер">
                     <div class="monster-name">💥 Крипер</div>
-                    <div class="monster-stats">HP: 150 | Ранг D | Награда: 2 монеты | 🔒 1 реферал</div>
+                    <div class="monster-stats"><span class="rank-badge rank-d">Ранг D</span> HP: 150 · Награда: 2 монеты · 🔒 1 реферал</div>
                 </div>
                 <div class="monster-card">
                     <img src="img/monster/0009 Swamp Leech 160 HP.png" alt="Болотная пиявка">
                     <div class="monster-name">🪱 Болотная пиявка</div>
-                    <div class="monster-stats">HP: 160 | Ранг D | Награда: 2 монеты | 🔒 1 реферал</div>
+                    <div class="monster-stats"><span class="rank-badge rank-d">Ранг D</span> HP: 160 · Награда: 2 монеты · 🔒 1 реферал</div>
                 </div>
                 <div class="monster-card">
                     <img src="img/monster/0010 Fierce Wolf 180 HP.png" alt="Свирепый волк">
                     <div class="monster-name">🐺 Свирепый волк</div>
-                    <div class="monster-stats">HP: 180 | Ранг D | Награда: 2 монеты | 🔒 1 реферал</div>
+                    <div class="monster-stats"><span class="rank-badge rank-d">Ранг D</span> HP: 180 · Награда: 2 монеты · 🔒 1 реферал</div>
                 </div>
                 <div class="monster-card">
                     <img src="img/monster/0011 Orc Warrior 280 HP.png" alt="Воин-орк">
                     <div class="monster-name">🟢 Воин-орк</div>
-                    <div class="monster-stats">HP: 280 | Ранг C | Награда: 3 монеты | 🔒 3 реферала</div>
+                    <div class="monster-stats"><span class="rank-badge rank-c">Ранг C</span> HP: 280 · Награда: 3 монеты · 🔒 3 реферала</div>
                 </div>
             </div>
 
@@ -621,42 +686,8 @@
 
 Пример: 50 отжиманий → 50 × 0.5 = 25 HP урона</code></pre>
 
-            <h3>👾 Рейд-боссы</h3>
-            <p><strong>Концепция:</strong> Кооперативные события, где <span class="highlight" style="background: linear-gradient(120deg, #7FD957 0%, #6BC745 100%); color: #1A1A1A; padding: 2px 8px; border-radius: 4px; font-weight: 700;">все пользователи атакуют одного общего босса</span>!</p>
-
-            <img src="img/monster/King 24h battle.png" alt="Рейд-Босс: Король Лени" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 2rem auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-
-            <p><strong>Milestone-уведомления:</strong></p>
-            <ul>
-                <li>50% HP: ⚡ "Герои! Босс ослаблен наполовину!"</li>
-                <li>25% HP: 🔥 "Ещё немного! Босс на грани поражения!"</li>
-                <li>10% HP: 💪 "Последний рывок! 10% HP осталось!"</li>
-            </ul>
-
-            <div class="success-box">
-                🎉 <strong>Победа:</strong> Рассылка всем пользователям с топ-3 героями (🥇🥈🥉) и общим количеством участников!
-            </div>
-        </section>
-
-        </section>
-
-        <section id="guild-quest">
-            <h2>⚔️ Утренние квесты Гильдии</h2>
-
-            <p style="font-size: 1.25rem; margin-bottom: 2rem;">
-                Каждое утро в <strong>07:00</strong> Гильдия Героев предлагает выбор из трёх монстров через кнопки в боте. Ты сам решаешь, с кем сразиться!
-            </p>
-
-            <h3>🏰 Как работает</h3>
-            <ol>
-                <li>В 07:00 приходит сообщение от Гильдии с тремя кнопками-монстрами</li>
-                <li>Нажимаешь на выбранного монстра — битва начинается</li>
-                <li>Тренируйся в течение дня, наносы урон через упражнения</li>
-                <li>Победишь до конца срока — получаешь игровую награду</li>
-            </ol>
-
             <div class="info-box">
-                💡 <strong>Квест приходит только если</strong> нет активной битвы с монстром. Если уже в бою — дождись завершения.
+                💡 <strong>Тот же коэффициент используется для начисления XP</strong> — см. <a href="#ranks">Систему рангов</a>. Тренируешься = качаешь героя и атакуешь монстра одновременно.
             </div>
 
             <h3>🔒 Система рангов монстров</h3>
@@ -686,24 +717,134 @@
 
             <h3>⚔️ Гарантия выбора</h3>
             <p>В подборке из 3 монстров всегда есть минимум 1 монстр Ранга E — чтобы квест был доступен даже новым игрокам. Остальные 2 — случайные из доступного пула.</p>
+
+            <h3>👾 Рейд-боссы</h3>
+            <p><strong>Концепция:</strong> Кооперативные события, где <span class="highlight" style="background: linear-gradient(120deg, #7FD957 0%, #6BC745 100%); color: #1A1A1A; padding: 2px 8px; border-radius: 4px; font-weight: 700;">все пользователи атакуют одного общего босса</span>!</p>
+
+            <img src="img/monster/King 24h battle.png" alt="Рейд-Босс: Король Лени" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 2rem auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+
+            <p><strong>Milestone-уведомления:</strong></p>
+            <ul>
+                <li>50% HP: ⚡ "Герои! Босс ослаблен наполовину!"</li>
+                <li>25% HP: 🔥 "Ещё немного! Босс на грани поражения!"</li>
+                <li>10% HP: 💪 "Последний рывок! 10% HP осталось!"</li>
+            </ul>
+
+            <div class="success-box">
+                🎉 <strong>Победа:</strong> Рассылка всем пользователям с топ-3 героями (🥇🥈🥉) и общим количеством участников!
+            </div>
+        </section>
+
+        </section>
+
+        <section id="guild-quest">
+            <h2>🏰 Гильдия героев</h2>
+
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">
+                Центр игровой активности: ежедневные квесты, магазин зелий и управление золотом — всё в одном <strong>Telegram Mini App</strong>.
+            </p>
+
+            <h3>🗺️ Ежедневные квесты</h3>
+            <p>Каждое утро в <strong>07:00</strong> Гильдия предлагает выбор из трёх монстров через кнопки в боте. В WebApp <code>/guild</code> можно начать квест в любое время через карточку монстра → <strong>«Взять задание»</strong>.</p>
+
+            <ol>
+                <li>В 07:00 приходит сообщение с тремя кнопками-монстрами</li>
+                <li>Выбери монстра — битва начинается</li>
+                <li>Тренируйся в течение дня, нанося урон упражнениями</li>
+                <li>Победишь до конца срока — получаешь золото</li>
+            </ol>
+
+            <div class="info-box">
+                💡 <strong>Квест приходит только если</strong> нет активной битвы с монстром. Если уже в бою — дождись завершения.
+            </div>
+
+            <h3>⚗️ Магазин зелий</h3>
+            <p>В WebApp гильдии доступен магазин зелий, усиливающих урон по монстрам на 24 часа. Купи зелье — и каждая тренировка будет бить сильнее!</p>
+            <ul>
+                <li>Нельзя использовать два одинаковых зелья одновременно</li>
+                <li>Активные зелья отображаются с таймером истечения</li>
+                <li>Зелья покупаются за игровое золото</li>
+            </ul>
+
+            <h3>💰 Баланс золота</h3>
+            <p>Золото начисляется за победы над монстрами и достижения. Кнопка <strong>«Пополнить»</strong> в WebApp запускает процесс пополнения через бота.</p>
+
+        </section>
+
+        <section id="voice">
+            <h2>🎙️ Голосовые команды</h2>
+
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">
+                Записывай тренировки голосом — просто отправь голосовое сообщение боту!
+            </p>
+
+            <h3>Как это работает</h3>
+            <ol>
+                <li>Отправь голосовое сообщение в чат с ботом</li>
+                <li>Бот распознаёт речь через Google Speech-to-Text (русский, английский, украинский)</li>
+                <li>Показывает распознанный текст с кнопками: <strong>✅ Подтвердить</strong> и <strong>✏️ Повторить</strong></li>
+                <li>При подтверждении — все упражнения из сообщения сохраняются одновременно</li>
+            </ol>
+
+            <h3>Примеры фраз</h3>
+            <pre><code>«Отжимания 20, пресс 40, приседания 30»
+«Сделал десять подтягиваний и пятьдесят отжиманий»
+«pushups 15, squats 30»</code></pre>
+
+            <div class="info-box">
+                💡 <strong>Умный парсер:</strong> Бот понимает числа прописью («двадцать»), разные разделители (запятая, точка с запятой) и исправляет артефакты распознавания (15.9 → 15).
+            </div>
+
+            <div class="warning-box">
+                ⚠️ Максимальный размер голосового сообщения — 20 МБ.
+            </div>
+        </section>
+
+        <section id="adventure">
+            <h2>📜 RPG-приключения</h2>
+
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">
+                Интерактивные истории с разветвлённым сюжетом, выборами и физическими испытаниями — <strong>тренировки как часть нарратива</strong>.
+            </p>
+
+            <h3>Как запустить</h3>
+            <p><strong>Команда:</strong> <code>/adventure</code> → кнопка «Открыть приключение»</p>
+
+            <h3>Механики</h3>
+            <ul>
+                <li><strong>Выборы (CHOICE):</strong> разветвления сюжета — ты решаешь, куда идти</li>
+                <li><strong>Испытания (CHALLENGE):</strong> выполни N повторений упражнения, чтобы продолжить</li>
+                <li><strong>Инвентарь:</strong> собирай предметы в ходе исследования</li>
+                <li><strong>Уровни сложности:</strong> EASY / NORMAL / HARD / BOSS</li>
+            </ul>
+
+            <h3>Глава 1 — Заброшенная башня</h3>
+            <p>Ты просыпаешься в каменной комнате... 16 сцен, несколько путей, предметы и развязка-клиффхэнгер. Первая глава обучает механикам через сюжет.</p>
         </section>
 
         <section id="social">
             <h2>👥 Социальные функции</h2>
 
             <h3>🏆 Лидерборды</h3>
-            <p><strong>Команда:</strong> <code>/leaderboard</code></p>
+            <p><strong>Команды:</strong> <code>/leaderboard</code>, <code>/rating</code></p>
 
             <p><strong>Доступные периоды:</strong> Сегодня, Вчера, Неделя, Месяц, Год, Всё время</p>
 
+            <p>Команда <code>/rating</code> показывает рейтинг через кнопки периода прямо в чате. Команда <code>/leaderboard</code> открывает <strong>Telegram Mini App</strong> с фильтрами по периоду и упражнению — текущий пользователь всегда выделен зелёным.</p>
+
+            <h3 id="squad">⚔️ Отряд героев</h3>
+            <p>RPG-страница с твоими рефералами. Каждый друг — карточка с аватаром, именем, значком серии 🔥 и статусом «✅ Тренировался сегодня».</p>
+            <p>Попасть на страницу: кнопка <strong>«Пригласить друга»</strong> в профиле героя или через вкладку ⚔️ в нижнем меню Mini App.</p>
+
             <h3>👥 Подписки</h3>
-            <p>Подписывайся на других пользователей и получай уведомления об их тренировках и рекордах!</p>
+            <p><strong>Команда:</strong> <code>/subscribe</code> — кнопки «Подписаться» / «Отписаться» с постраничным списком. Вкладка 👥 в Mini App открывает страницу подписчиков с двумя табами: «Подписки» и «Подписчики».</p>
 
             <h3>🤝 Реферальная система</h3>
             <p><strong>Бонусы:</strong></p>
             <ul>
                 <li><strong>Вам:</strong> +50 XP за каждого друга</li>
                 <li><strong>Вам:</strong> Прогресс к реферальным достижениям (до 500 друзей!)</li>
+                <li><strong>Вам:</strong> Разблокировка монстров Ранга D и C в гильдии</li>
             </ul>
         </section>
 

@@ -6,8 +6,8 @@
 
     <!-- SEO Meta Tags -->
     <title>SportBot - Фитнес RPG бот в Telegram | Превращай тренировки в игру</title>
-    <meta name="description" content="Геймифицированный фитнес-бот для Telegram. 80+ достижений, рейд-боссы, монстры, система рангов. Отжимания, подтягивания, приседания, пресс — всё в одном месте!">
-    <meta name="keywords" content="фитнес бот telegram, тренировки telegram, отжимания бот, подтягивания бот, геймификация фитнес, SportBot">
+    <meta name="description" content="Геймифицированный фитнес-бот для Telegram. 80+ достижений, рейд-боссы, монстры, голосовые команды, приключения, гильдия с квестами. Отжимания, подтягивания, приседания, пресс — всё в одном месте!">
+    <meta name="keywords" content="фитнес бот telegram, тренировки telegram, отжимания бот, подтягивания бот, геймификация фитнес, SportBot, голосовые команды, RPG приключение">
     <meta name="author" content="Denis Kaydunov">
     <meta name="robots" content="index, follow">
 
@@ -570,7 +570,7 @@
         <img src="SportBot logo.png" alt="SportBot Logo" class="hero-logo">
         <div class="hero-content">
             <h1><span style="color: var(--primary);">SportBot</span></h1>
-            <p class="subtitle">Превращай тренировки в эпическое приключение! Геймифицированный фитнес-бот с системой достижений, рейд-боссами и игровыми наградами.</p>
+            <p class="subtitle">Превращай тренировки в эпическое приключение! Голосовые команды, гильдия с квестами, личные монстры, рейд-боссы, достижения и RPG-истории — всё в одном боте.</p>
             <div class="hero-buttons">
                 <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" class="btn-primary" target="_blank">⚔️ Начать игру</a>
                 <a href="guide.html" class="btn-secondary">📖 Полное руководство</a>
@@ -631,12 +631,6 @@
                     <p class="feature-description">30 уровней прогрессии от "Зерна" до "Божества". Набирай опыт за тренировки и рефералов, повышай свой статус!</p>
                 </a>
 
-                <a href="guide.html#social" class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3 class="feature-title">Социальные функции</h3>
-                    <p class="feature-description">Лидерборды по упражнениям, подписки на друзей, реферальная система. Соревнуйся и мотивируй других!</p>
-                </a>
-
                 <a href="guide.html#commands" class="feature-card">
                     <div class="feature-icon">🔥</div>
                     <h3 class="feature-title">Система серий</h3>
@@ -645,12 +639,172 @@
 
                 <a href="guide.html#guild-quest" class="feature-card">
                     <div class="feature-icon">🏰</div>
-                    <h3 class="feature-title">Утренние квесты</h3>
-                    <p class="feature-description">Каждое утро Гильдия Героев предлагает выбор из 3 монстров. Монстры рангов D и C открываются за рефералов!</p>
+                    <h3 class="feature-title">Гильдия героев</h3>
+                    <p class="feature-description">Принимай ежедневные квесты, покупай зелья урона в магазине гильдии и получай золото за победы над монстрами!</p>
                 </a>
+
+                <a href="guide.html#voice" class="feature-card">
+                    <div class="feature-icon">🎙️</div>
+                    <h3 class="feature-title">Голосовые команды</h3>
+                    <p class="feature-description">Записывай тренировки голосом! Скажи "отжимания 20, пресс 40" — бот сам распознает и сохранит результат без единого нажатия.</p>
+                </a>
+
+                <a href="guide.html#adventure" class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3 class="feature-title">RPG-приключения</h3>
+                    <p class="feature-description">Проходи интерактивные истории с разветвлёнными сюжетами и испытаниями. Выполняй физические челленджи прямо внутри сюжета!</p>
+                </a>
+
+                <a href="guide.html#squad" class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h3 class="feature-title">Совместные сражения</h3>
+                    <p class="feature-description">Собери отряд и бейте рейд-босса вместе! Лидерборды, подписки на друзей, реферальная система — соревнуйся и побеждай с командой.</p>
+                </a>
+
             </div>
         </div>
     </section>
+        </div>
+    </section>
+
+    <!-- App Preview Section -->
+    <section style="padding: 6rem 0 6rem; background: var(--dark); color: var(--white);">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 1rem;"><span style="color: var(--primary);">Всё прямо в Telegram</span></h2>
+            <p class="section-subtitle" style="margin-bottom: 3rem;">Никаких сторонних приложений — Mini App встроен в чат</p>
+        </div>
+        <div class="screens-carousel" id="screensCarousel">
+            <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
+                <img src="img/hero-app-screenshot.png" alt="Профиль героя">
+                <p>Профиль героя</p>
+            </div>
+            <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
+                <img src="img/battle-screenshot.png" alt="Битва с монстром">
+                <p>Битва с монстром</p>
+            </div>
+            <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
+                <img src="img/leaderboard-screenshot.png" alt="Лидерборд">
+                <p>Лидерборд</p>
+            </div>
+            <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
+                <img src="img/calendar-screenshot.png" alt="Календарь тренировок">
+                <p>Календарь</p>
+            </div>
+            <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
+                <img src="img/achievements-screenshot.png" alt="Достижения">
+                <p>Достижения</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="screenLightbox" class="screen-lightbox" onclick="closeScreenLightbox()">
+        <button class="screen-lightbox-close" onclick="closeScreenLightbox()">&times;</button>
+        <img id="screenLightboxImg" src="" alt="">
+    </div>
+
+    <style>
+        .screens-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            cursor: grab;
+            padding: 1rem 4rem 2rem;
+            -webkit-overflow-scrolling: touch;
+        }
+        .screens-carousel:active { cursor: grabbing; }
+        .screens-carousel::-webkit-scrollbar { height: 4px; }
+        .screens-carousel::-webkit-scrollbar-track { background: #2a2a2a; border-radius: 2px; }
+        .screens-carousel::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
+        .screen-item {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            cursor: pointer;
+            text-align: center;
+        }
+        .screen-item img {
+            width: 280px;
+            border-radius: 24px;
+            border: 2px solid rgba(127,217,87,0.25);
+            box-shadow: 0 20px 60px rgba(127,217,87,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            pointer-events: none;
+        }
+        .screen-item:hover img {
+            transform: scale(1.03);
+            box-shadow: 0 30px 80px rgba(127,217,87,0.4);
+        }
+        .screen-item p {
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+        }
+        .screen-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .screen-lightbox.active { display: flex; }
+        .screen-lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 16px;
+            cursor: default;
+        }
+        .screen-lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            opacity: 0.7;
+            line-height: 1;
+        }
+        .screen-lightbox-close:hover { opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            const el = document.getElementById('screensCarousel');
+            if (!el) return;
+            let isDown = false, startX, scrollLeft;
+            el.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft; });
+            el.addEventListener('mouseleave', () => isDown = false);
+            el.addEventListener('mouseup', () => isDown = false);
+            el.addEventListener('mousemove', e => {
+                if (!isDown) return;
+                e.preventDefault();
+                el.scrollLeft = scrollLeft - (e.pageX - el.offsetLeft - startX) * 1.5;
+            });
+            el.addEventListener('wheel', e => { e.preventDefault(); el.scrollLeft += e.deltaY * 2; }, { passive: false });
+        })();
+
+        function openScreenLightbox(img) {
+            const lb = document.getElementById('screenLightbox');
+            document.getElementById('screenLightboxImg').src = img.src;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeScreenLightbox() {
+            document.getElementById('screenLightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeScreenLightbox(); });
+        document.getElementById('screenLightboxImg')?.addEventListener('click', e => e.stopPropagation());
+    </script>
+
 
     <!-- Raid Boss Section -->
     <section style="padding: 0; background: #323232; color: var(--white); text-align: center; position: relative; overflow: hidden;">
@@ -686,14 +840,6 @@
                 <h3>Быстрые ссылки</h3>
                 <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank">Запустить бота</a>
                 <a href="guide.html">Полное руководство</a>
-            </div>
-
-            <div class="footer-section">
-                <h3>Возможности</h3>
-                <a href="guide.html#achievements">80+ достижений</a>
-                <a href="guide.html#battles">Рейд-боссы</a>
-                <a href="guide.html#ranks">Система рангов</a>
-                <a href="guide.html#social">Лидерборды</a>
             </div>
         </div>
 
