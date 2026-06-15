@@ -13,9 +13,7 @@
    - Branch: `main`, Folder: `/docs`
 
 2. Сайт будет доступен по адресу:
-   ```
-   https://denkaydunov.github.io/sportbot-site/
-   ```
+   [https://denkaydunov.github.io/sportbot-site/](https://denkaydunov.github.io/sportbot-site/)
 
 ## SEO оптимизация
 
