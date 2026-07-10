@@ -6,8 +6,8 @@
 
     <!-- SEO Meta Tags -->
     <title>SportBot - Фитнес RPG бот в Telegram | Превращай тренировки в игру</title>
-    <meta name="description" content="Геймифицированный фитнес-бот для Telegram. 80+ достижений, рейд-боссы, монстры, голосовые команды, приключения, гильдия с квестами. Отжимания, подтягивания, приседания, пресс — всё в одном месте!">
-    <meta name="keywords" content="фитнес бот telegram, тренировки telegram, отжимания бот, подтягивания бот, геймификация фитнес, SportBot, голосовые команды, RPG приключение">
+    <meta name="description" content="Геймифицированный фитнес-бот для Telegram. 80+ достижений, рейд-боссы, монстры, приключения, гильдия с квестами. Отжимания, подтягивания, приседания, пресс — всё в одном месте!">
+    <meta name="keywords" content="фитнес бот telegram, тренировки telegram, отжимания бот, подтягивания бот, геймификация фитнес, SportBot, RPG приключение">
     <meta name="author" content="Denis Kaydunov">
     <meta name="robots" content="index, follow">
 
@@ -570,7 +570,7 @@
         <img src="SportBot logo.png" alt="SportBot Logo" class="hero-logo">
         <div class="hero-content">
             <h1><span style="color: var(--primary);">SportBot</span></h1>
-            <p class="subtitle">Превращай тренировки в эпическое приключение! Голосовые команды, гильдия с квестами, личные монстры, рейд-боссы, достижения и RPG-истории — всё в одном боте.</p>
+            <p class="subtitle">Превращай тренировки в эпическое приключение! Гильдия с квестами, личные монстры, рейд-боссы, достижения и RPG-истории — всё в одном боте.</p>
             <div class="hero-buttons">
                 <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" class="btn-primary" target="_blank">⚔️ Начать игру</a>
                 <a href="guide.html" class="btn-secondary">📖 Полное руководство</a>
@@ -582,7 +582,7 @@
     <section class="stats">
         <div class="stats-grid">
             <div class="stat-item">
-                <div class="stat-number">80+</div>
+                <div class="stat-number">111+</div>
                 <div class="stat-label">Достижений</div>
             </div>
             <div class="stat-item">
@@ -595,7 +595,11 @@
             </div>
             <div class="stat-item">
                 <div class="stat-number" id="users-count">0</div>
-                <div class="stat-label">Активных пользователей</div>
+                <div class="stat-label">Пользователей</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="reps-count">0</div>
+                <div class="stat-label">Повторений выполнено</div>
             </div>
         </div>
     </section>
@@ -609,44 +613,20 @@
             <div class="features-grid">
                 <a href="guide.html#achievements" class="feature-card">
                     <div class="feature-icon">🏆</div>
-                    <h3 class="feature-title">80+ Достижений</h3>
+                    <h3 class="feature-title">111+ Достижений</h3>
                     <p class="feature-description">Разблокируй уникальные достижения за серии тренировок, рекорды и прогресс. Каждое достижение награждает игровыми монетами!</p>
                 </a>
 
                 <a href="guide.html#battles" class="feature-card">
                     <div class="feature-icon">⚔️</div>
                     <h3 class="feature-title">Боевая система</h3>
-                    <p class="feature-description">Сражайся с личными монстрами и кооперативными рейд-боссами. Каждая тренировка наносит урон врагам — побеждай и получай награды!</p>
+                    <p class="feature-description">Сражайся с личными монстрами соло, участвуй в кооперативных рейд-боссах всем сообществом и выходи на Арену PvP в дуэлях 1v1. Каждая тренировка наносит урон — побеждай и получай награды!</p>
                 </a>
 
-                <a href="guide.html#commands" class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3 class="feature-title">Прогресс и аналитика</h3>
-                    <p class="feature-description">Графики тренировок, календарь, детальная статистика. Отслеживай свой путь от новичка до легенды с визуализацией прогресса.</p>
-                </a>
-
-                <a href="guide.html#ranks" class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Система рангов</h3>
-                    <p class="feature-description">30 уровней прогрессии от "Зерна" до "Божества". Набирай опыт за тренировки и рефералов, повышай свой статус!</p>
-                </a>
-
-                <a href="guide.html#commands" class="feature-card">
-                    <div class="feature-icon">🔥</div>
-                    <h3 class="feature-title">Система серий</h3>
-                    <p class="feature-description">Поддерживай ежедневные тренировки для накопления серий. Страхуй серию игровыми монетами, если пропустил день!</p>
-                </a>
-
-                <a href="guide.html#guild-quest" class="feature-card">
-                    <div class="feature-icon">🏰</div>
-                    <h3 class="feature-title">Гильдия героев</h3>
-                    <p class="feature-description">Принимай ежедневные квесты, покупай зелья урона в магазине гильдии и получай золото за победы над монстрами!</p>
-                </a>
-
-                <a href="guide.html#voice" class="feature-card">
-                    <div class="feature-icon">🎙️</div>
-                    <h3 class="feature-title">Голосовые команды</h3>
-                    <p class="feature-description">Записывай тренировки голосом! Скажи "отжимания 20, пресс 40" — бот сам распознает и сохранит результат без единого нажатия.</p>
+                <a href="commands.html" class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3 class="feature-title">Персональная программа</h3>
+                    <p class="feature-description">Бот строит индивидуальный план тренировок с прогрессией нагрузки. Выполняй — и с каждой неделей становишься сильнее.</p>
                 </a>
 
                 <a href="guide.html#adventure" class="feature-card">
@@ -655,15 +635,55 @@
                     <p class="feature-description">Проходи интерактивные истории с разветвлёнными сюжетами и испытаниями. Выполняй физические челленджи прямо внутри сюжета!</p>
                 </a>
 
-                <a href="guide.html#squad" class="feature-card">
-                    <div class="feature-icon">⚔️</div>
-                    <h3 class="feature-title">Совместные сражения</h3>
-                    <p class="feature-description">Собери отряд и бейте рейд-босса вместе! Лидерборды, подписки на друзей, реферальная система — соревнуйся и побеждай с командой.</p>
+                <a href="guide.html#guild-quest" class="feature-card">
+                    <div class="feature-icon">🏰</div>
+                    <h3 class="feature-title">Гильдия героев</h3>
+                    <p class="feature-description">Принимай ежедневные квесты, покупай зелья урона в магазине гильдии и получай золото за победы над монстрами!</p>
                 </a>
 
             </div>
         </div>
     </section>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section style="padding: 6rem 0; background: #1e1e1e;">
+        <div class="container">
+            <h2 class="section-title"><span style="color: var(--primary);">Реальные результаты</span></h2>
+            <p class="section-subtitle" style="margin-bottom: 3rem;">Игроки, которые тренировались каждый день</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+
+                <div style="background: #242424; border: 1px solid #333; border-radius: 16px; padding: 1.75rem;">
+                    <div style="font-size: 2rem; margin-bottom: 0.75rem;">💪</div>
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">2 → 22</div>
+                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;">подтягивания за 6 месяцев</div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;">Начинал с 2 подтягиваний. Полгода ежедневных боёв с монстрами — и личный рекорд вырос до 22.</p>
+                </div>
+
+                <div style="background: #242424; border: 1px solid #333; border-radius: 16px; padding: 1.75rem;">
+                    <div style="font-size: 2rem; margin-bottom: 0.75rem;">🔥</div>
+                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem; white-space: nowrap;">20 000 + 10 000</div>
+                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;">отжиманий и подтягиваний суммарно</div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;">20 000 отжиманий и 10 000 подтягиваний — не за один раз, а шаг за шагом, убивая боссов каждый день.</p>
+                </div>
+
+                <div style="background: #242424; border: 1px solid #333; border-radius: 16px; padding: 1.75rem;">
+                    <div style="font-size: 2rem; margin-bottom: 0.75rem;">⚡</div>
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">1 000</div>
+                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;">отжиманий за один день</div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;">Год тренировок в боте — и однажды просто сделал 1 000 отжиманий за день. Потому что мог.</p>
+                </div>
+
+                <div style="background: #242424; border: 1px solid #333; border-radius: 16px; padding: 1.75rem;">
+                    <div style="font-size: 2rem; margin-bottom: 0.75rem;">⚖️</div>
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">−5 кг</div>
+                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;">сброшенного веса</div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;">Просто уничтожал монстров каждый день. Не думал о диете — думал об убийстве боссов. Минус 5 кг.</p>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -693,6 +713,14 @@
             <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
                 <img src="img/achievements-screenshot.png" alt="Достижения">
                 <p>Достижения</p>
+            </div>
+            <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
+                <img src="img/shop-screenshot.png" alt="Лавка">
+                <p>Лавка</p>
+            </div>
+            <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
+                <img src="img/community-screenshot.png" alt="Сообщество таверны">
+                <p>Сообщество</p>
             </div>
         </div>
     </section>
@@ -840,18 +868,19 @@
                 <h3>Быстрые ссылки</h3>
                 <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank">Запустить бота</a>
                 <a href="guide.html">Полное руководство</a>
+                <a href="changelog.html">История обновлений</a>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 SportBot. Все права защищены.</p>
+            <p>&copy; 2026 SportBot. Все права защищены. &nbsp;·&nbsp; <a href="https://www.instagram.com/kaydunov_denis" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">Instagram</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@rpg_sport_bot" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">TikTok</a></p>
         </div>
     </footer>
     <script>
         // Анимация счетчика пользователей
         function animateCounter() {
             const counter = document.getElementById('users-count');
-            const target = 332;
+            const target = 374;
             const duration = 2000; // 2 секунды
             const increment = target / (duration / 16); // 60 FPS
             let current = 0;
@@ -883,7 +912,26 @@
         }
 
         // Запуск анимации при загрузке страницы
-        window.addEventListener('load', animateCounter);
+        function animateReps() {
+            const counter = document.getElementById('reps-count');
+            const target = 310;
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                    counter.textContent = target + 'к+';
+                } else {
+                    counter.textContent = Math.floor(current) + 'к';
+                }
+            }, 16);
+        }
+
+        window.addEventListener('load', () => { animateCounter(); animateReps(); });
     </script>
 </body>
 </html>
