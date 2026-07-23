@@ -203,10 +203,10 @@
             <nav>
                 <button class="menu-toggle" onclick="document.querySelector('#cmd-nav').classList.toggle('open')">☰</button>
                 <ul class="nav-links" id="cmd-nav">
-                    <li><a href="#commands">Команды</a></li>
-                    <li><a href="#ranks">Ранги</a></li>
-                    <li><a href="#achievements">Достижения</a></li>
-                    <li><a href="#battles">Битвы</a></li>
+                    <li><a href="#vse-komandy">Команды</a></li>
+                    <li><a href="#3-sistema-rangov-i-opyta">Ранги</a></li>
+                    <li><a href="#4-dostizheniya">Достижения</a></li>
+                    <li><a href="#5-boevaya-sistema">Битвы</a></li>
                     <li><a href="guide.html">📖 Руководство</a></li>
                     <li><a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank">⚔️ Бот</a></li>
                 </ul>
@@ -310,7 +310,8 @@
   <div class="cmd-card"><span class="cmd-name">/guild</span><span class="cmd-desc">Гильдия — квесты, магазин зелий, баланс золота</span></div>
   <div class="cmd-card"><span class="cmd-name">/adventure</span><span class="cmd-desc">RPG-приключение — интерактивные истории с физическими испытаниями</span></div>
   <div class="cmd-card"><span class="cmd-name">/calendar</span><span class="cmd-desc">Календарь тренировок</span></div>
-  <div class="cmd-card"><span class="cmd-name">/achievements</span><span class="cmd-desc">Достижения — прогресс по всем 80+</span></div>
+  <div class="cmd-card"><span class="cmd-name">/achievements</span><span class="cmd-desc">Достижения — прогресс по всем 110+</span></div>
+  <div class="cmd-card"><span class="cmd-name">/program</span><span class="cmd-desc">Программа тренировок — персональный план с прогрессией нагрузки</span></div>
 </div>
 
 <div class="cmd-group-title">Тренировки</div>
@@ -319,6 +320,7 @@
   <div class="cmd-card"><span class="cmd-name">/profile</span><span class="cmd-desc">Профиль пользователя (текстовый)</span></div>
   <div class="cmd-card"><span class="cmd-name">/graph</span><span class="cmd-desc">Графики тренировок<small>Упражнения: pushups, pullups, squats, abs · Периоды: week, month, year</small></span></div>
   <div class="cmd-card"><span class="cmd-name">🎙️ Голос</span><span class="cmd-desc">Запись тренировок голосом — скажи упражнения и повторения, бот распознает и сохранит</span></div>
+  <div class="cmd-card"><span class="cmd-name">💬 Текст</span><span class="cmd-desc">Запись через кнопки меню или текстом: «отжимания 30», «приседания 50» — бот распознает упражнение и число</span></div>
 </div>
 
 <div class="cmd-group-title">Соревнования и социальное</div>
@@ -327,6 +329,7 @@
   <div class="cmd-card"><span class="cmd-name">/monster</span><span class="cmd-desc">Статус текущей битвы с монстром или рейд-боссом</span></div>
   <div class="cmd-card"><span class="cmd-name">/subscribe</span><span class="cmd-desc">Управление подписками — следи за тренировками других героев</span></div>
   <div class="cmd-card"><span class="cmd-name">/referal</span><span class="cmd-desc">Реферальная программа — пригласи друга, получи XP и открой новых монстров</span></div>
+  <div class="cmd-card"><span class="cmd-name">/arena</span><span class="cmd-desc">Арена PvP — дуэль 1v1, побеждает тот кто сделал больше повторений за 30 минут</span></div>
 </div>
 
 <div class="cmd-group-title">Настройки</div>
@@ -352,52 +355,8 @@
 <li style="margin: 5px 0;">Создание профиля с уникальным Telegram ID</li>
 <li style="margin: 5px 0;">Присвоение начального ранга "Зерно"</li>
 <li style="margin: 5px 0;">Установка языка по умолчанию (русский)</li>
-<li style="margin: 5px 0;">Обнуление всех счётчиков (0 тренировок, 0 опыта, 0 монет)</li>
 </ul>
 <br>
-<h4 id="profil-polzovatelya" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">📝 Профиль пользователя</h4>
-<br>
-<p style="margin: 10px 0; line-height: 1.6;"><strong>Команда:</strong> <code style="background-color: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: monospace;">/profile</code>  </p>
-<p style="margin: 10px 0; line-height: 1.6;"><strong>Синонимы:</strong> <code style="background-color: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: monospace;">/профиль</code>, <code style="background-color: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: monospace;">/p</code></p>
-<br>
-<p style="margin: 10px 0; line-height: 1.6;"><strong>Что показывает:</strong></p>
-<ul style="margin: 10px 0; padding-left: 25px;">
-<li style="margin: 5px 0;">📝 Имя пользователя</li>
-<li style="margin: 5px 0;">📈 Возраст</li>
-<li style="margin: 5px 0;">📭 Пол (мужчина/женщина)</li>
-<li style="margin: 5px 0;">🌐 Язык интерфейса (русский/English/українська)</li>
-<li style="margin: 5px 0;">💵 Баланс игровых монет</li>
-<li style="margin: 5px 0;">⏰ Предпочитаемое время тренировки</li>
-<li style="margin: 5px 0;">🏋️ <strong>Прогресс по упражнениям</strong> (всего/максимум за тренировку):</li>
-<li style="margin: 5px 0;">Отжимания</li>
-<li style="margin: 5px 0;">Подтягивания</li>
-<li style="margin: 5px 0;">Приседания</li>
-<li style="margin: 5px 0;">Пресс</li>
-<li style="margin: 5px 0;">⚔ Текущий ранг</li>
-<li style="margin: 5px 0;">💎 Опыт (текущий/требуется до следующего ранга)</li>
-<li style="margin: 5px 0;">Прогресс-бар до следующего ранга</li>
-</ul>
-<br>
-<p style="margin: 10px 0; line-height: 1.6;"><strong>Пример вывода:</strong></p>
-<pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; font-family: monospace;">
-📝 Имя: Иван Богатырь
-📈 Возраст: 28
-📭 Пол: мужчина
-🌐 Язык: русский
-💵 Баланс: 5 монет
-⏰ Время тренировки: 18:00
-
-🏋️ Прогресс
-Всего/максимум
-* отжиманий: 1,250/85
-* подтягиваний: 340/25
-* приседаний: 2,100/150
-* пресс: 890/60
-
-⚔  Ранг: Дружинник
-💎 Опыт: 3,450/5,000
-████████░░░░░░░░ 69%
-</pre>
 <br>
 <hr style="border: 1px solid #ccc; margin: 20px 0;">
 <br>
@@ -407,10 +366,10 @@
 <br>
 <p style="margin: 10px 0; line-height: 1.6;"><strong>Типы упражнений:</strong></p>
 <ul style="margin: 10px 0; padding-left: 25px;">
-<li style="margin: 5px 0;">🔥 <strong>Отжимания</strong> (push-ups) — коэффициент опыта: 0.5</li>
-<li style="margin: 5px 0;">💪 <strong>Подтягивания</strong> (pull-ups) — коэффициент опыта: 1.0</li>
-<li style="margin: 5px 0;">🦵 <strong>Приседания</strong> (squats) — коэффициент опыта: 0.3</li>
-<li style="margin: 5px 0;">🛡️ <strong>Пресс</strong> (abs) — коэффициент опыта: 0.4</li>
+<li style="margin: 5px 0;">🔥 <strong>Отжимания</strong> (push-ups) — коэффициент опыта: 1.0</li>
+<li style="margin: 5px 0;">💪 <strong>Подтягивания</strong> (pull-ups) — коэффициент опыта: 2.33</li>
+<li style="margin: 5px 0;">🦵 <strong>Приседания</strong> (squats) — коэффициент опыта: 0.72</li>
+<li style="margin: 5px 0;">🛡️ <strong>Пресс</strong> (abs) — коэффициент опыта: 0.63</li>
 </ul>
 <br>
 <p style="margin: 10px 0; line-height: 1.6;"><strong>Что происходит после записи:</strong></p>
@@ -530,12 +489,11 @@
 <br>
 <h3 id="31-ierarhiya-rangov" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">3.1 Иерархия рангов</h3>
 <br>
-<p style="margin: 10px 0; line-height: 1.6;"><strong>24-уровневая система</strong> с прогрессией от новичка до божества:</p>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>30 уровней</strong> с прогрессией от новичка до легенды. Каждый ранг — уникальное славянское или мифологическое название: от <strong>Зерна</strong> до <strong>«Кто ты, тварь?!»</strong>.</p>
 <br>
-<table style="border-collapse: collapse; width: 100%; margin: 20px 0; border: 1px solid #ccc;">
-<thead><tr>
-<th style="border: 1px solid #ddd; padding: 12px; background-color: #f2f2f2; font-weight: bold; text-align: left;">№</th>
-<th style="border: 1px solid #ddd; padding: 12px; background-color: #f2f2f2; font-weight: bold; text-align: left;">Ранг</th>
+<p style="margin: 10px 0; line-height: 1.6;">У каждого ранга есть <strong>класс</strong> (E → D → C → B → A → S) и <strong>уровень внутри класса</strong> — это позволяет видеть прогресс детально, даже когда до следующего ранга ещё далеко.</p>
+<br>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Прогрессия ранга:</strong> При накоплении достаточного опыта происходит автоматическое повышение с уведомлением:</p>
 <th style="border: 1px solid #ddd; padding: 12px; background-color: #f2f2f2; font-weight: bold; text-align: left;">Название (RU)</th>
 <th style="border: 1px solid #ddd; padding: 12px; background-color: #f2f2f2; font-weight: bold; text-align: left;">Требуется XP</th>
 </tr></thead><tbody>
@@ -740,27 +698,27 @@ XP = количество_повторений × коэффициент_упр�
 <br>
 <p style="margin: 10px 0; line-height: 1.6;"><strong>Коэффициенты упражнений:</strong></p>
 <ul style="margin: 10px 0; padding-left: 25px;">
-<li style="margin: 5px 0;">Отжимания: <strong>0.5</strong> (50 отжиманий = 25 XP)</li>
-<li style="margin: 5px 0;">Подтягивания: <strong>1.0</strong> (10 подтягиваний = 10 XP)</li>
-<li style="margin: 5px 0;">Приседания: <strong>0.3</strong> (100 приседаний = 30 XP)</li>
-<li style="margin: 5px 0;">Пресс: <strong>0.4</strong> (50 пресса = 20 XP)</li>
+<li style="margin: 5px 0;">Отжимания: <strong>1.0</strong> (50 отжиманий = 50 XP)</li>
+<li style="margin: 5px 0;">Подтягивания: <strong>2.33</strong> (10 подтягиваний = 23 XP)</li>
+<li style="margin: 5px 0;">Приседания: <strong>0.72</strong> (100 приседаний = 72 XP)</li>
+<li style="margin: 5px 0;">Пресс: <strong>0.63</strong> (50 пресса = 32 XP)</li>
 </ul>
 <br>
 <p style="margin: 10px 0; line-height: 1.6;"><strong>2. Рефералы</strong> (бонусный источник)</p>
 <ul style="margin: 10px 0; padding-left: 25px;">
-<li style="margin: 5px 0;">За каждого приглашённого друга: <strong>+50 XP</strong></li>
+<li style="margin: 5px 0;">За каждого приглашённого друга: <strong>+100 XP</strong></li>
 <li style="margin: 5px 0;">Бонус действует при регистрации реферала</li>
 </ul>
 <br>
 <p style="margin: 10px 0; line-height: 1.6;"><strong>Пример расчёта дневного опыта:</strong></p>
 <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; font-family: monospace;">
 Тренировка за день:
-- 50 отжиманий = 50 × 0.5 = 25 XP
-- 10 подтягиваний = 10 × 1.0 = 10 XP
-- 100 приседаний = 100 × 0.3 = 30 XP
-- 40 пресса = 40 × 0.4 = 16 XP
+- 50 отжиманий = 50 × 1.0 = 50 XP
+- 10 подтягиваний = 10 × 2.33 = 23 XP
+- 100 приседаний = 100 × 0.72 = 72 XP
+- 40 пресса = 40 × 0.63 = 25 XP
 
-Итого: 81 XP за день
+Итого: 170 XP за день
 </pre>
 <br>
 <hr style="border: 1px solid #ccc; margin: 20px 0;">
@@ -769,7 +727,7 @@ XP = количество_повторений × коэффициент_упр�
 <br>
 <h3 id="41-kategorii-dostizhenij" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">4.1 Категории достижений</h3>
 <br>
-<p style="margin: 10px 0; line-height: 1.6;"><strong>80+ уникальных достижений</strong> в 9 категориях:</p>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>110+ уникальных достижений</strong> в 9 категориях:</p>
 <br>
 <h4 id="serii-streak" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🔥 Серии</h4>
 <br>
@@ -1442,7 +1400,7 @@ XP = количество_повторений × коэффициент_упр�
 <br>
 <hr style="border: 1px solid #ccc; margin: 20px 0;">
 <br>
-<h2 id="5-boevaya-sistema" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">5. Боевая система</h2>
+<h2 id="5-boevaya-sistema" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;"><a id="battles"></a>5. Боевая система</h2>
 <br>
 <h3 id="51-lichnye-monstry" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">5.1 Монстры</h3>
 <br>
@@ -1497,10 +1455,10 @@ XP = количество_повторений × коэффициент_упр�
 <p style="margin: 10px 0; line-height: 1.6;"><strong>Пример:</strong></p>
 <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; font-family: monospace;">
 Тренировка: 50 отжиманий
-Урон монстру: 50 × 0.5 = 25 HP
+Урон монстру: 50 × 1.0 = 50 HP
 
 С активным зельем урона +100%:
-Урон монстру: 25 × 2 = 50 HP
+Урон монстру: 50 × 2 = 100 HP
 </pre>
 <br>
 <p style="margin: 10px 0; line-height: 1.6;"><strong>3. Победа:</strong></p>
@@ -1686,7 +1644,8 @@ XP = количество_повторений × коэффициент_упр�
 <br>
 <p style="margin: 10px 0; line-height: 1.6;"><strong>Что даёт:</strong></p>
 <ul style="margin: 10px 0; padding-left: 25px;">
-<li style="margin: 5px 0;"><strong>Вам:</strong> +50 XP за каждого зарегистрированного друга</li>
+<li style="margin: 5px 0;"><strong>Вам:</strong> +100 XP за каждого зарегистрированного друга</li>
+<li style="margin: 5px 0;"><strong>Вам:</strong> +10 золота за каждого нового пользователя</li>
 <li style="margin: 5px 0;"><strong>Вам:</strong> Прогресс к реферальным достижениям (1/3/10/25/50/100/250/500 друзей)</li>
 <li style="margin: 5px 0;"><strong>Другу:</strong> Стартовый бонус при регистрации (если настроено)</li>
 </ul>
@@ -1983,7 +1942,7 @@ TDEE = BMR × коэффициент_активности
 <li style="margin: 5px 0;">Все команды и уведомления бота</li>
 <li style="margin: 5px 0;">Названия упражнений</li>
 <li style="margin: 5px 0;">Названия рангов (24 ранга × 3 языка)</li>
-<li style="margin: 5px 0;">Названия достижений (80+ достижений × 3 языка)</li>
+<li style="margin: 5px 0;">Названия достижений (110+ достижений × 3 языка)</li>
 <li style="margin: 5px 0;">Описания достижений</li>
 <li style="margin: 5px 0;">Системные сообщения</li>
 <li style="margin: 5px 0;">Ошибки и валидации</li>
@@ -2011,7 +1970,7 @@ TDEE = BMR × коэффициент_активности
 <p style="margin: 10px 0; line-height: 1.6;">2. <strong>Нажмите "Старт"</strong> — автоматическая регистрация</p>
 <p style="margin: 10px 0; line-height: 1.6;">3. <strong>Запишите первую тренировку:</strong> <code style="background-color: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: monospace;">50 отжимания</code></p>
 <p style="margin: 10px 0; line-height: 1.6;">4. <strong>Получите первое достижение</strong> и наград монетамиу! 🎉</p>
-<p style="margin: 10px 0; line-height: 1.6;">5. <strong>Пригласите друзей</strong> по реферальной ссылке — +50 XP за каждого</p>
+<p style="margin: 10px 0; line-height: 1.6;">5. <strong>Пригласите друзей</strong> по реферальной ссылке — +100 XP за каждого</p>
 <p style="margin: 10px 0; line-height: 1.6;">6. <strong>Участвуйте в рейд-боссах</strong> — кооперативные события</p>
 <p style="margin: 10px 0; line-height: 1.6;">7. <strong>Побеждайте монстров</strong> — личные челленджи</p>
 <p style="margin: 10px 0; line-height: 1.6;">8. <strong>Стремитесь к рангу "Божество"</strong> — 29-й ранг</p>
