@@ -1,0 +1,12 @@
+name: Ping Google
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Google sitemap
+        run: curl "https://www.google.com/ping?sitemap=https://denkaydunov.github.io/SportBot-site/sitemap.xml"
