@@ -434,7 +434,11 @@
                     <a href="#battles" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚔️</span> Монстры и рейд-боссы</a>
                     <a href="#guild-quest" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">🏰</span> Гильдия — квесты и зелья</a>
                     <a href="#adventure" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📜</span> RPG-приключения</a>
+                    <a href="#camera" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📷</span> AR-тренировки через камеру</a>
+                    <a href="#minimal" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📊</span> Минималистичная тема</a>
+                    <a href="#stalion" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#3a2010; border-radius:10px; text-decoration:none; color:#d4c89a; border: 1px solid #c0392b; transition:background 0.2s;" onmouseover="this.style.background='#4a2a18'" onmouseout="this.style.background='#3a2010'"><span style="font-size:1.3rem">☣️</span> СТАЛИОН — тёмный СССР</a>
                     <a href="#social" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">👥</span> Рейтинг, отряд, подписки</a>
+                    <a href="#arena" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚔️</span> Арена PvP</a>
                     <a href="#settings" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚙️</span> Настройки</a>
                 </div>
             </nav>
@@ -549,60 +553,68 @@
             <p>За каждого приглашённого друга: <span class="highlight"><strong>+100 XP</strong></span></p>
         </section>
 
+        <!-- NOTE: Не раскрывать полный список достижений — должна быть тайна. Категории да, тиры нет. -->
         <section id="achievements">
             <h2>🏆 Достижения</h2>
 
             <p style="font-size: 1.25rem; margin-bottom: 2rem;">
-            <strong>110+ уникальных достижений</strong> в 9 категориях с игровыми наградами
+            <strong>110+ уникальных достижений</strong> в 9 категориях с игровыми наградами — монеты, XP и титулы
             </p>
 
-            <h3>🔥 Серии (STREAK)</h3>
-            <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Название</th>
-                        <th>Описание</th>
-                        <th>Дней</th>
-                        <th>Награда</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Искра</td><td>10 дней подряд без перерыва</td><td>10</td><td>1 монета</td></tr>
-                    <tr><td>Пламя</td><td>20 дней стабильных тренировок</td><td>20</td><td>2 монеты</td></tr>
-                    <tr><td>Пожар силы</td><td>50 дней настоящей силы</td><td>50</td><td>5 монет</td></tr>
-                </tbody>
-            </table>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem; border-left: 3px solid #7FD957;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔥</div>
+                    <div style="font-weight: 700; margin-bottom: 0.25rem;">Серии (STREAK)</div>
+                    <div style="color: #999; font-size: 0.9rem;">Тренируйся без пропусков. Чем длиннее серия — тем ценнее награда.</div>
+                </div>
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem; border-left: 3px solid #7FD957;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💪</div>
+                    <div style="font-weight: 700; margin-bottom: 0.25rem;">Суммарные повторения</div>
+                    <div style="color: #999; font-size: 0.9rem;">Отжимания, подтягивания, приседания и пресс — каждое упражнение ведёт свой счёт.</div>
+                </div>
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem; border-left: 3px solid #7FD957;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚡</div>
+                    <div style="font-weight: 700; margin-bottom: 0.25rem;">Максимум за тренировку</div>
+                    <div style="color: #999; font-size: 0.9rem;">Рекорды в одной сессии — проверь на что ты способен за раз.</div>
+                </div>
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem; border-left: 3px solid #7FD957;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🗓️</div>
+                    <div style="font-weight: 700; margin-bottom: 0.25rem;">Количество тренировок</div>
+                    <div style="color: #999; font-size: 0.9rem;">Просто выходи на тренировки — каждое занятие засчитывается.</div>
+                </div>
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem; border-left: 3px solid #7FD957;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🤝</div>
+                    <div style="font-weight: 700; margin-bottom: 0.25rem;">Реферальная система</div>
+                    <div style="color: #999; font-size: 0.9rem;">Приглашай друзей — за каждого открывается новый уровень достижения.</div>
+                </div>
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem; border-left: 3px solid #7FD957;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏅</div>
+                    <div style="font-weight: 700; margin-bottom: 0.25rem;">Лидерборд</div>
+                    <div style="color: #999; font-size: 0.9rem;">Попади в топ лидерборда и получи эксклюзивное достижение.</div>
+                </div>
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem; border-left: 3px solid #7FD957;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚔️</div>
+                    <div style="font-weight: 700; margin-bottom: 0.25rem;">Арена PvP</div>
+                    <div style="color: #999; font-size: 0.9rem;">Победы, поражения и сыгранные матчи — всё идёт в зачёт.</div>
+                </div>
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem; border-left: 3px solid #7FD957;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🧪</div>
+                    <div style="font-weight: 700; margin-bottom: 0.25rem;">Зелья</div>
+                    <div style="color: #999; font-size: 0.9rem;">Используй зелья в битвах с монстрами — алхимик должен практиковаться.</div>
+                </div>
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem; border-left: 3px solid #7FD957;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">👥</div>
+                    <div style="font-weight: 700; margin-bottom: 0.25rem;">Социальные</div>
+                    <div style="color: #999; font-size: 0.9rem;">Подписки, подписчики и вклад в сообщество.</div>
+                </div>
             </div>
 
             <div class="warning-box">
-                ⚠️ <strong>Важно:</strong> Серия сбрасывается при пропуске дня (более 24 часов без тренировки). Можно купить продление за 1 монету в течение 48 часов.
-            </div>
-
-            <h3>💪 Путь богатыря (Отжимания TOTAL)</h3>
-            <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Название</th>
-                        <th>Всего повторений</th>
-                        <th>Награда</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Оруженосец</td><td>100</td><td>0.5 монеты</td></tr>
-                    <tr><td>Дружинник</td><td>500</td><td>1 монета</td></tr>
-                    <tr><td>Витязь</td><td>1,000</td><td>2 монеты</td></tr>
-                    <tr><td>Богатырь</td><td>5,000</td><td>5 монет</td></tr>
-                    <tr><td>Кибер-воин</td><td>10,000</td><td>10 монет</td></tr>
-                    <tr><td>Титан механики</td><td>50,000</td><td>25 монет</td></tr>
-                    <tr><td>Квантовый колосс</td><td>100,000</td><td>50 монет</td></tr>
-                </tbody>
-            </table>
+                ⚠️ <strong>Серия сбрасывается</strong> при пропуске дня (более 24 часов без тренировки). Можно купить продление за 1 монету в течение 48 часов.
             </div>
 
             <div class="info-box">
-                💡 <strong>Подсказка:</strong> Аналогичные достижения доступны для подтягиваний, приседаний и пресса! Каждое упражнение имеет свою уникальную тематику.
+                🔒 Конкретные пороги и названия тиров — открываются по мере прогресса прямо в боте. Следующее достижение всегда видно в твоём профиле!
             </div>
         </section>
 
@@ -825,8 +837,16 @@
             <h2>📷 AR-тренировки через камеру</h2>
 
             <p style="font-size: 1.25rem; margin-bottom: 2rem;">
-                Бот считает повторения <strong>в реальном времени</strong> через камеру телефона — используется MediaPipe Pose для отслеживания тела.
+                Бот считает повторения <strong>в реальном времени</strong> через камеру телефона — используется Google MediaPipe Pose для отслеживания тела прямо на устройстве.
             </p>
+
+            <div style="background: #1a2a1a; border: 1px solid #4a7a3a; border-radius: 12px; padding: 1.25rem; margin-bottom: 2rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                <span style="font-size: 1.5rem; flex-shrink: 0;">🔒</span>
+                <div>
+                    <strong style="color: #7FD957;">Конфиденциальность</strong><br>
+                    <span style="color: #ccc;">Видео не покидает телефон — распознавание движений происходит прямо на устройстве (MediaPipe Pose). На сервер передаётся только итоговый счёт: сколько повторений ты сделал.</span>
+                </div>
+            </div>
 
             <h3>Поддерживаемые упражнения</h3>
             <div class="table-wrap">
@@ -854,13 +874,118 @@
                 ⚠️ <strong>Важно:</strong> Камера использует фронталку и зеркалит изображение. Дождись надписи «Калибрую детектор позы...» и начинай только после того, как система тебя обнаружит.
             </div>
 
-            <h3>Игровая механика</h3>
+            <h3>⚔️ RPG-режим (по умолчанию)</h3>
             <ul>
-                <li><strong>5 раундов</strong> с 20-секундным отдыхом между ними</li>
-                <li>Каждое повторение наносит урон монстру (коэффициент = XP-коэффициент упражнения)</li>
-                <li>Монстр постепенно атакует тебя в ответ</li>
-                <li><strong>Storm Mode ⚡</strong> — режим без отдыха между раундами для опытных</li>
+                <li><strong>5 раундов</strong> с 90-секундным отдыхом между ними (кольцевой таймер на экране)</li>
+                <li>Каждое повторение наносит урон монстру — коэффициент равен XP-коэффициенту упражнения</li>
+                <li>Монстр атакует тебя в ответ — скорость атаки зависит от его ранга (от E: медленно до S: очень быстро)</li>
+                <li>Паузы на 20/40/60/80% HP монстра — бот отмечает прогресс</li>
+                <li><strong>Storm Mode ⚡</strong> — режим выживания без отдыха между раундами. Для опытных бойцов. Включается в настройках.</li>
             </ul>
+
+            <h3>📊 Minimal-режим</h3>
+            <p>В минималистичной теме камера работает иначе: вместо монстра и HP-бара — <strong>шкала времени</strong>. Она тает со скоростью, зависящей от твоего ранга. Никакого RPG-антуража — просто тренировка и результат.</p>
+
+            <h3>🏆 Экран результата</h3>
+            <ul>
+                <li>Суммарные повторения за все раунды (с анимацией)</li>
+                <li>XP за тренировку (в Minimal: «Очки рейтинга»)</li>
+                <li>Изменение баланса монет</li>
+                <li>Текущая серия тренировок и прогресс к следующему рангу</li>
+            </ul>
+        </section>
+
+        <section id="minimal">
+            <h2>📊 Минималистичная тема</h2>
+
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">
+                Чистый интерфейс без RPG-антуража — только тренировки, прогресс и лидерборд. Для тех, кому не нужны монстры и квесты.
+            </p>
+
+            <h3>Как включить</h3>
+            <p><code>/settings</code> → 🎨 <strong>Внешний вид</strong> → кнопка <strong>📊 Minimal</strong></p>
+
+            <h3>Что меняется</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem;">
+                    <div style="font-weight: 700; margin-bottom: 0.75rem; color: #7FD957;">✅ Остаётся</div>
+                    <ul style="list-style: none; padding: 0; color: #ccc; font-size: 0.9rem;">
+                        <li style="margin-bottom: 0.5rem;">👤 Профиль и статистика</li>
+                        <li style="margin-bottom: 0.5rem;">📷 AR-тренировка через камеру</li>
+                        <li style="margin-bottom: 0.5rem;">🏆 Достижения</li>
+                        <li style="margin-bottom: 0.5rem;">🏅 Лидерборд</li>
+                        <li style="margin-bottom: 0.5rem;">📅 Календарь тренировок</li>
+                        <li>🔥 Серия тренировок</li>
+                    </ul>
+                </div>
+                <div style="background: #242424; border-radius: 12px; padding: 1.25rem;">
+                    <div style="font-weight: 700; margin-bottom: 0.75rem; color: #999;">🚫 Скрывается</div>
+                    <ul style="list-style: none; padding: 0; color: #999; font-size: 0.9rem;">
+                        <li style="margin-bottom: 0.5rem;">🏰 Гильдия и квесты</li>
+                        <li style="margin-bottom: 0.5rem;">🛒 Лавка и зелья</li>
+                        <li style="margin-bottom: 0.5rem;">⚔️ Арена PvP</li>
+                        <li>🍺 Таверна</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Камера в Minimal-режиме</h3>
+            <p>Вместо монстра с HP-баром — <strong>шкала времени</strong>. Она медленно тает, скорость зависит от твоего ранга. Никаких монстров, никаких атак — просто ты и повторения.</p>
+            <p style="margin-top: 0.75rem;">Все результаты (XP, стрик, прогресс ранга) сохраняются так же, как и в RPG-режиме.</p>
+
+            <div class="info-box">
+                💡 Переключаться между темами можно в любой момент — настройка сохраняется на сервере и синхронизируется между устройствами.
+            </div>
+        </section>
+
+        <section id="stalion" style="border: 1px solid #c0392b; border-radius: 16px; padding: 2rem; margin-top: 3rem; background: linear-gradient(135deg, #1a1a0e 0%, #2a2510 100%);">
+            <h2 style="color: #d4c89a; font-family: Georgia, serif;">☣️ СТАЛИОН — тёмный СССР</h2>
+
+            <p style="font-size: 1.25rem; margin-bottom: 1.5rem; color: #d4c89a;">
+                Отдельный бот в постапокалиптическом советском сеттинге. Некрогаз, заражённые враги, военный долг и гимны — всё как в S.T.A.L.K.E.R., только ты тренируешься по-настоящему.
+            </p>
+
+            <p style="color: #b0a070; margin-bottom: 2rem;">
+                Сталионы — элитные бойцы, закалённые сталью, присягой и долгом. Созданные лучшими умами Советского Союза, они встают щитом перед товарищами и ломают врага за секунды.
+            </p>
+
+            <div style="text-align: center; margin: 1.5rem 0;">
+                <a href="https://t.me/StalionRPGBot" target="_blank" style="display: inline-block; background: #c0392b; color: #fff; padding: 0.875rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.05rem;">⭐ Вступить в СТАЛИОН</a>
+            </div>
+
+            <h3 style="color: #d4c89a; margin-top: 2rem;">Названия всего другие</h3>
+            <div class="table-wrap">
+            <table style="border-color: #4a3a1a;">
+                <thead style="background: #3a2a10;">
+                    <tr>
+                        <th style="color: #d4c89a;">SportBot</th>
+                        <th style="color: #d4c89a;">СТАЛИОН</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Герой</td><td>Боец</td></tr>
+                    <tr><td>Гильдия</td><td>Штаб</td></tr>
+                    <tr><td>Рейтинг</td><td>Сводка с фронта</td></tr>
+                    <tr><td>Лавка</td><td>Военторг</td></tr>
+                    <tr><td>Арена</td><td>Спартакиада</td></tr>
+                    <tr><td>Таверна</td><td>Солдатская столовая №1</td></tr>
+                    <tr><td>Музыка</td><td>Радио «Маяк»</td></tr>
+                    <tr><td>Рейд-босс</td><td>Операция</td></tr>
+                </tbody>
+            </table>
+            </div>
+
+            <h3 style="color: #d4c89a; margin-top: 2rem;">Враги</h3>
+            <p style="color: #b0a070; margin-bottom: 1rem;">19 монстров от Ранга E до S — Некро-слизень, Заражённый Жнец, Некро-Пёс, Бета-паразит, Некро-Титан...</p>
+            <p style="color: #b0a070;"><strong style="color: #c0392b;">Рейд-боссы:</strong> Жнец (5 000 HP, 72ч), Дора — Некро-Титан (15 000 HP, 7 дней), Альфа-Носитель (8 000 HP, 48ч)</p>
+
+            <div style="background: #1a1008; border: 1px solid #4a3a1a; border-radius: 10px; padding: 1rem; margin-top: 2rem; color: #b0a070; font-size: 0.9rem;">
+                📖 <strong style="color: #d4c89a;">Авторство лора:</strong> Концепцию мира Сталионов создал
+                <a href="https://t.me/kripevil" target="_blank" style="color: #c0392b; text-decoration: none;">@krip819</a> —
+                <a href="https://www.instagram.com/_maximivanov/" target="_blank" style="color: #c0392b; text-decoration: none;">Instagram</a> ·
+                <a href="https://www.youtube.com/@Krip819" target="_blank" style="color: #c0392b; text-decoration: none;">YouTube</a> ·
+                <a href="https://t.me/kripevil" target="_blank" style="color: #c0392b; text-decoration: none;">Telegram</a>
+            </div>
         </section>
 
         <section id="social">
