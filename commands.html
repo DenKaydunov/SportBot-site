@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportBot — Полное руководство по командам</title>
-    <meta name="description" content="Все команды SportBot для Telegram: /start, /pushups, /squats, /graph, /achievements, /leaderboard и другие. Полный список с описанием.">
+    <title id="meta-title">SportBot — Полное руководство по командам</title>
+    <meta id="meta-desc" name="description" content="Все команды SportBot для Telegram: /start, /pushups, /squats, /graph, /achievements, /leaderboard и другие. Полный список с описанием.">
     <meta name="keywords" content="SportBot команды, команды фитнес бота telegram, /pushups telegram, /squats бот, список команд SportBot">
     <meta name="author" content="Denis Kaydunov">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="SportBot — Полное руководство по командам">
-    <meta property="og:description" content="Все команды SportBot: записывай тренировки, смотри графики, соревнуйся в таблице лидеров. Полный справочник команд.">
+    <meta id="og-title" property="og:title" content="SportBot — Полное руководство по командам">
+    <meta id="og-desc" property="og:description" content="Все команды SportBot: записывай тренировки, смотри графики, соревнуйся в таблице лидеров. Полный справочник команд.">
     <meta property="og:url" content="https://denkaydunov.github.io/SportBot-site/commands.html">
-    <meta property="og:locale" content="ru_RU">
+    <meta id="og-locale" property="og:locale" content="ru_RU">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Команды SportBot">
-    <meta name="twitter:description" content="Полный список команд геймифицированного фитнес-бота для Telegram">
+    <meta id="tw-title" name="twitter:title" content="Команды SportBot">
+    <meta id="tw-desc" name="twitter:description" content="Полный список команд геймифицированного фитнес-бота для Telegram">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://denkaydunov.github.io/SportBot-site/commands.html">
@@ -96,15 +96,20 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.25rem;
             list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
         }
 
         .nav-links a {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: color 0.3s;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -210,9 +215,26 @@
                 padding-left: 15px !important;
             }
         }
+
+        #lang-toggle {
+            background: transparent;
+            border: 1.5px solid rgba(255,255,255,0.4);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+            line-height: 1;
+        }
+        #lang-toggle:hover, #lang-toggle.lang-active-en {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
     </style>
 </head>
-<body>
+<body data-page="commands">
     <!-- Header -->
     <header>
         <div class="header-content">
@@ -223,17 +245,19 @@
             <nav>
                 <button class="menu-toggle" onclick="document.querySelector('#cmd-nav').classList.toggle('open')">☰</button>
                 <ul class="nav-links" id="cmd-nav">
-                    <li><a href="#vse-komandy">Команды</a></li>
-                    <li><a href="#3-sistema-rangov-i-opyta">Ранги</a></li>
-                    <li><a href="#4-dostizheniya">Достижения</a></li>
-                    <li><a href="#5-boevaya-sistema">Битвы</a></li>
-                    <li><a href="guide.html">📖 Руководство</a></li>
-                    <li><a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank">⚔️ Бот</a></li>
+                    <li><a href="#vse-komandy" data-i18n="commands.nav.commands">Команды</a></li>
+                    <li><a href="#3-sistema-rangov-i-opyta" data-i18n="commands.nav.ranks">Ранги</a></li>
+                    <li><a href="#4-dostizheniya" data-i18n="commands.nav.achievements">Достижения</a></li>
+                    <li><a href="#5-boevaya-sistema" data-i18n="commands.nav.battles">Битвы</a></li>
+                    <li><a href="guide.html" data-i18n="commands.nav.guide">📖 Руководство</a></li>
+                    <li><a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank" data-i18n="nav.bot">⚔️ Бот</a></li>
+                    <li><button id="lang-toggle" onclick="toggleLang()">🇷🇺 RU</button></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <div id="commands-ru">
     <div class="content-wrapper">
 <h1 style="font-size: 36px; font-weight: bold; margin-bottom: 20px;">Оглавление</h1>
 <ul style="list-style-type: none; padding-left: 0;">
@@ -2030,15 +2054,416 @@ TDEE = BMR × коэффициент_активности
 <hr style="border: 1px solid #ccc; margin: 20px 0;">
 <br>
     </div>
+    </div><!-- #commands-ru -->
+
+    <!-- ═══════════════════════════════════════════════════════════
+         ENGLISH VERSION — shown when lang = 'en'
+    ═══════════════════════════════════════════════════════════ -->
+    <div id="commands-en" style="display:none;">
+    <div class="content-wrapper">
+<h1 style="font-size: 36px; font-weight: bold; margin-bottom: 20px;">Table of Contents</h1>
+<ul style="list-style-type: none; padding-left: 0;">
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#vse-komandy" style="color: #0066cc; text-decoration: none;">📋 All Commands</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#1-osnovnye-komandy" style="color: #0066cc; text-decoration: none;">1. Basic Commands</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#11-registraciya-i-profil" style="color: #0066cc; text-decoration: none;">1.1 Registration &amp; Profile</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#registraciya" style="color: #0066cc; text-decoration: none;">👤 Registration</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#profil-polzovatelya" style="color: #0066cc; text-decoration: none;">📝 User Profile</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#12-zapis-trenirovok" style="color: #0066cc; text-decoration: none;">1.2 Logging Workouts</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#zapis-uprazhnenij" style="color: #0066cc; text-decoration: none;">💪 Exercise Recording</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#2-statistika-i-progress" style="color: #0066cc; text-decoration: none;">2. Stats &amp; Progress</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#21-lichnaya-statistika" style="color: #0066cc; text-decoration: none;">2.1 Personal Stats</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#statistika-za-period" style="color: #0066cc; text-decoration: none;">📊 Period Stats</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#22-grafiki-trenirovok" style="color: #0066cc; text-decoration: none;">2.2 Workout Charts</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#komanda-graph" style="color: #0066cc; text-decoration: none;">📈 /graph command</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#23-kalendar-trenirovok" style="color: #0066cc; text-decoration: none;">2.3 Workout Calendar</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#komanda-calendar" style="color: #0066cc; text-decoration: none;">📅 /calendar command</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#3-sistema-rangov-i-opyta" style="color: #0066cc; text-decoration: none;">3. Rank &amp; XP System</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#31-ierarhiya-rangov" style="color: #0066cc; text-decoration: none;">3.1 Rank Hierarchy</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#32-kak-poluchit-opyt" style="color: #0066cc; text-decoration: none;">3.2 How to Earn XP</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#istochniki-opyta" style="color: #0066cc; text-decoration: none;">💎 XP Sources</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#4-dostizheniya" style="color: #0066cc; text-decoration: none;">4. Achievements</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#41-kategorii-dostizhenij" style="color: #0066cc; text-decoration: none;">4.1 Achievement Categories</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#serii-streak" style="color: #0066cc; text-decoration: none;">🔥 Streaks</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#otzhimaniya-put-bogatyrya-total-reps" style="color: #0066cc; text-decoration: none;">💪 Push-ups — Warrior's Path</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#otzhimaniya-ispytanie-sily-max-reps" style="color: #0066cc; text-decoration: none;">💪 Push-ups — Trial of Strength</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#podtyagivaniya-sila-medvedya-total-reps" style="color: #0066cc; text-decoration: none;">🦾 Pull-ups — Bear's Strength</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#podtyagivaniya-ispytanie-vysoty-max-reps" style="color: #0066cc; text-decoration: none;">🦾 Pull-ups — Trial of Heights</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#prisedaniya-korni-duba-total-reps" style="color: #0066cc; text-decoration: none;">🦵 Squats — Oak Roots</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#prisedaniya-stojkost-max-reps" style="color: #0066cc; text-decoration: none;">🦵 Squats — Resilience</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#press-dospehi-duha-total-reps" style="color: #0066cc; text-decoration: none;">🛡️ Abs — Spirit Armor</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#press-nesgibaemyj-sterzhen-max-reps" style="color: #0066cc; text-decoration: none;">🛡️ Abs — Unbreakable Core</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#zakalka-v-kuzne-workout-count" style="color: #0066cc; text-decoration: none;">⚔️ Forged in the Forge</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#referalnaya-sistema-referral" style="color: #0066cc; text-decoration: none;">🤝 Referral System</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#bratstvo-sily-social" style="color: #0066cc; text-decoration: none;">🤝 Brotherhood of Strength</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#pedestal-slavy-leaderboard" style="color: #0066cc; text-decoration: none;">🏅 Podium of Glory</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#42-ton-nagrady" style="color: #0066cc; text-decoration: none;">4.2 Rewards</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#5-boevaya-sistema" style="color: #0066cc; text-decoration: none;">5. Combat System</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#51-lichnye-monstry" style="color: #0066cc; text-decoration: none;">5.1 Monsters</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#dostupnye-monstry" style="color: #0066cc; text-decoration: none;">👹 Available Monsters</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#mehanika-boya" style="color: #0066cc; text-decoration: none;">🎯 Battle Mechanics</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#otobrazhenie-progressa" style="color: #0066cc; text-decoration: none;">📊 Progress Display</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#52-rejd-bossy" style="color: #0066cc; text-decoration: none;">5.2 Raid Bosses</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#mehanika-rejd-bossov" style="color: #0066cc; text-decoration: none;">👾 Raid Boss Mechanics</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#tablica-liderov" style="color: #0066cc; text-decoration: none;">🏆 Leaderboard</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#avtomaticheskaya-proverka" style="color: #0066cc; text-decoration: none;">⏰ Auto Check</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#6-socialnye-funkcii" style="color: #0066cc; text-decoration: none;">6. Social Features</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#61-liderbordy" style="color: #0066cc; text-decoration: none;">6.1 Leaderboards</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#komanda-leaderboard" style="color: #0066cc; text-decoration: none;">🏆 /leaderboard command</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#62-podpiski" style="color: #0066cc; text-decoration: none;">6.2 Subscriptions</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#sistema-podpisok" style="color: #0066cc; text-decoration: none;">👥 Subscription System</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#63-referalnaya-sistema" style="color: #0066cc; text-decoration: none;">6.3 Referral System</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#priglashenie-druzej" style="color: #0066cc; text-decoration: none;">🤝 Invite Friends</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#7-sistema-serij" style="color: #0066cc; text-decoration: none;">7. Streak System</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#71-otslezhivanie-serij" style="color: #0066cc; text-decoration: none;">7.1 Streak Tracking</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#72-sohranenie-serii" style="color: #0066cc; text-decoration: none;">7.2 Streak Save</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#8-personalnye-nastrojki" style="color: #0066cc; text-decoration: none;">8. Personal Settings</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#komanda-settings" style="color: #0066cc; text-decoration: none;">⚙️ /settings command</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#9-pitanie-i-makrosy" style="color: #0066cc; text-decoration: none;">9. Nutrition &amp; Macros</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#sistema-pitaniya" style="color: #0066cc; text-decoration: none;">🥗 Nutrition System</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#sozdanie-profilya-pitaniya" style="color: #0066cc; text-decoration: none;">📊 Creating Nutrition Profile</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#logirovanie-priyoma-pishhi" style="color: #0066cc; text-decoration: none;">🍽️ Food Logging</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#logirovanie-vesa" style="color: #0066cc; text-decoration: none;">⚖️ Weight Logging</a></li>
+<li style="margin: 8px 0; padding-left: 60px;"><a href="#itogi-za-period" style="color: #0066cc; text-decoration: none;">📈 Period Summary</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#10-multiyazychnost" style="color: #0066cc; text-decoration: none;">10. Multilingual</a></li>
+<li style="margin: 8px 0; padding-left: 30px;"><a href="#podderzhka-yazykov" style="color: #0066cc; text-decoration: none;">🌍 Language Support</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#nachalo-raboty" style="color: #0066cc; text-decoration: none;">🚀 Getting Started</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#podderzhka" style="color: #0066cc; text-decoration: none;">📞 Support</a></li>
+<li style="margin: 8px 0; padding-left: 0px;"><a href="#vazhnye-primechaniya" style="color: #0066cc; text-decoration: none;">⚠️ Important Notes</a></li>
+</ul>
+<hr style="border: 2px solid #333; margin: 30px 0;">
+<h1 id="squatmasterbot-polnoe-rukovodstvo-po-komandam" style="font-size: 32px; font-weight: bold; margin-top: 30px; margin-bottom: 15px;">SportBot — Full Command Reference</h1>
+<br>
+<blockquote style="border-left: 4px solid #ccc; padding-left: 15px; margin: 15px 0; color: #666; font-style: italic;"><strong>Fitness RPG in Telegram with adventures and a guild</strong></blockquote>
+<blockquote style="border-left: 4px solid #ccc; padding-left: 15px; margin: 15px 0; color: #666; font-style: italic;">Turn your workouts into an epic adventure! Train, fight bosses, complete quests and explore stories.</blockquote>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="vse-komandy" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">📋 All Commands</h2>
+<br>
+<style>
+.cmd-grid { display: grid; gap: 8px; margin: 16px 0; }
+.cmd-card { display: flex; align-items: flex-start; gap: 12px; background: #1A1A1A; border-radius: 10px; padding: 12px 16px; border: 1px solid #2e2e2e; }
+.cmd-card:hover { border-color: #7FD957; }
+.cmd-name { font-family: monospace; font-size: 1rem; font-weight: 700; color: #7FD957; white-space: nowrap; min-width: 120px; }
+.cmd-desc { color: #ccc; font-size: 0.95rem; line-height: 1.5; }
+.cmd-desc small { color: #888; display: block; margin-top: 2px; }
+.cmd-group-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #666; margin: 20px 0 8px; }
+</style>
+
+<div class="cmd-group-title">Mini App</div>
+<div class="cmd-grid">
+  <div class="cmd-card"><span class="cmd-name">/hero</span><span class="cmd-desc">Hero profile — rank, XP, exercise stats, squad</span></div>
+  <div class="cmd-card"><span class="cmd-name">/guild</span><span class="cmd-desc">Guild — quests, potion shop, gold balance</span></div>
+  <div class="cmd-card"><span class="cmd-name">/adventure</span><span class="cmd-desc">RPG adventure — interactive stories with physical challenges</span></div>
+  <div class="cmd-card"><span class="cmd-name">/calendar</span><span class="cmd-desc">Workout calendar</span></div>
+  <div class="cmd-card"><span class="cmd-name">/achievements</span><span class="cmd-desc">Achievements — progress across all 121+</span></div>
+  <div class="cmd-card"><span class="cmd-name">/program</span><span class="cmd-desc">Training program — personal plan with progressive overload</span></div>
+</div>
+
+<div class="cmd-group-title">Workouts</div>
+<div class="cmd-grid">
+  <div class="cmd-card"><span class="cmd-name">/start</span><span class="cmd-desc">Begin your journey — registration and first step</span></div>
+  <div class="cmd-card"><span class="cmd-name">/profile</span><span class="cmd-desc">User profile (text)</span></div>
+  <div class="cmd-card"><span class="cmd-name">/graph</span><span class="cmd-desc">Workout charts<small>Exercises: pushups, pullups, squats, abs · Periods: week, month, year</small></span></div>
+  <div class="cmd-card"><span class="cmd-name">🎙️ Voice</span><span class="cmd-desc">Record workouts by voice — say exercises and reps, the bot will recognise and save them</span></div>
+  <div class="cmd-card"><span class="cmd-name">💬 Text</span><span class="cmd-desc">Record via menu buttons or text: "pushups 30", "squats 50" — the bot recognises the exercise and number</span></div>
+</div>
+
+<div class="cmd-group-title">Competition &amp; Social</div>
+<div class="cmd-grid">
+  <div class="cmd-card"><span class="cmd-name">/rating</span><span class="cmd-desc">Leaderboard with period selector — Today / Week / Month / All time</span></div>
+  <div class="cmd-card"><span class="cmd-name">/monster</span><span class="cmd-desc">Current monster or raid boss battle status</span></div>
+  <div class="cmd-card"><span class="cmd-name">/subscribe</span><span class="cmd-desc">Subscription management — follow other heroes' workouts</span></div>
+  <div class="cmd-card"><span class="cmd-name">/referal</span><span class="cmd-desc">Referral program — invite a friend, earn XP and unlock new monsters</span></div>
+  <div class="cmd-card"><span class="cmd-name">/arena</span><span class="cmd-desc">PvP Arena — 1v1 duel, the player who does the most reps in 30 minutes wins</span></div>
+</div>
+
+<div class="cmd-group-title">Settings</div>
+<div class="cmd-grid">
+  <div class="cmd-card"><span class="cmd-name">/settings</span><span class="cmd-desc">Notification settings</span></div>
+  <div class="cmd-card"><span class="cmd-name">/language</span><span class="cmd-desc">Change interface language (ru / en / uk)</span></div>
+  <div class="cmd-card"><span class="cmd-name">/donate</span><span class="cmd-desc">Top up gold balance</span></div>
+  <div class="cmd-card"><span class="cmd-name">/help</span><span class="cmd-desc">Help</span></div>
+</div>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="1-osnovnye-komandy" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">1. Basic Commands</h2>
+<br>
+<h3 id="11-registraciya-i-profil" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">1.1 Registration &amp; Profile</h3>
+<br>
+<h4 id="registraciya" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">👤 Registration</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Happens on first interaction with the bot. The system creates a profile and assigns the starting rank <strong>"Seed"</strong>.</p>
+<br>
+<h4 id="profil-polzovatelya" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">📝 User Profile</h4>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Command:</strong> <code>/profile</code> or <code>/hero</code> (Mini App)</p>
+<p style="margin: 10px 0; line-height: 1.6;">The profile shows:</p>
+<ul style="margin: 10px 0; padding-left: 25px;">
+<li style="margin: 5px 0;">Current rank and progress to next rank</li>
+<li style="margin: 5px 0;">Total exercise counts</li>
+<li style="margin: 5px 0;">Current streak</li>
+<li style="margin: 5px 0;">Achievement count</li>
+<li style="margin: 5px 0;">Active monster / raid boss</li>
+</ul>
+<br>
+<h3 id="12-zapis-trenirovok" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">1.2 Logging Workouts</h3>
+<br>
+<h4 id="zapis-uprazhnenij" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">💪 Exercise Recording</h4>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Text format:</strong></p>
+<ul style="margin: 10px 0; padding-left: 25px;">
+<li style="margin: 5px 0;"><code>pushups 30</code> — 30 push-ups</li>
+<li style="margin: 5px 0;"><code>pullups 10</code> — 10 pull-ups</li>
+<li style="margin: 5px 0;"><code>squats 50</code> — 50 squats</li>
+<li style="margin: 5px 0;"><code>abs 40</code> — 40 crunches</li>
+</ul>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Voice recording:</strong> Say the exercise and count naturally — the bot recognises speech and saves the workout.</p>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="2-statistika-i-progress" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">2. Stats &amp; Progress</h2>
+<br>
+<h3 id="21-lichnaya-statistika" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">2.1 Personal Stats</h3>
+<br>
+<h4 id="statistika-za-period" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">📊 Period Stats</h4>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Command:</strong> <code>/profile</code></p>
+<p style="margin: 10px 0; line-height: 1.6;">Shows exercise counts broken down by period: today, week, month, all time.</p>
+<br>
+<h3 id="22-grafiki-trenirovok" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">2.2 Workout Charts</h3>
+<br>
+<h4 id="komanda-graph" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">📈 /graph command</h4>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Command:</strong> <code>/graph</code></p>
+<ul style="margin: 10px 0; padding-left: 25px;">
+<li style="margin: 5px 0;">Exercises: <code>pushups</code>, <code>pullups</code>, <code>squats</code>, <code>abs</code></li>
+<li style="margin: 5px 0;">Periods: <code>week</code>, <code>month</code>, <code>year</code></li>
+</ul>
+<br>
+<h3 id="23-kalendar-trenirovok" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">2.3 Workout Calendar</h3>
+<br>
+<h4 id="komanda-calendar" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">📅 /calendar command</h4>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Command:</strong> <code>/calendar</code> (Mini App)</p>
+<p style="margin: 10px 0; line-height: 1.6;">Calendar view showing all workout days with colour coding for streak days.</p>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="3-sistema-rangov-i-opyta" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">3. Rank &amp; XP System</h2>
+<br>
+<h3 id="31-ierarhiya-rangov" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">3.1 Rank Hierarchy</h3>
+<p style="margin: 10px 0; line-height: 1.6;">30 ranks organised into 5 classes: Novice → Apprentice → Warrior → Master → Legend. Each class has 6 levels. Reaching a new class unlocks a new personal monster.</p>
+<br>
+<h3 id="32-kak-poluchit-opyt" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">3.2 How to Earn XP</h3>
+<br>
+<h4 id="istochniki-opyta" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">💎 XP Sources</h4>
+<ul style="margin: 10px 0; padding-left: 25px;">
+<li style="margin: 5px 0;">Logging workouts (XP = reps × exercise coefficient)</li>
+<li style="margin: 5px 0;">Defeating monsters (bonus XP)</li>
+<li style="margin: 5px 0;">Completing guild quests</li>
+<li style="margin: 5px 0;">Unlocking achievements</li>
+<li style="margin: 5px 0;">Streak bonuses</li>
+</ul>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="4-dostizheniya" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">4. Achievements</h2>
+<br>
+<h3 id="41-kategorii-dostizhenij" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">4.1 Achievement Categories</h3>
+<br>
+<h4 id="serii-streak" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🔥 Streaks</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Achievements for maintaining consecutive training days: 3, 7, 14, 30, 60, 90, 180, 365 days.</p>
+<br>
+<h4 id="otzhimaniya-put-bogatyrya-total-reps" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">💪 Push-ups — Warrior's Path (total reps)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Cumulative push-ups milestones: 100, 500, 1 000, 5 000, 10 000, 50 000, 100 000.</p>
+<br>
+<h4 id="otzhimaniya-ispytanie-sily-max-reps" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">💪 Push-ups — Trial of Strength (max reps)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Maximum push-ups in a single session: 10, 25, 50, 100, 200.</p>
+<br>
+<h4 id="podtyagivaniya-sila-medvedya-total-reps" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🦾 Pull-ups — Bear's Strength (total reps)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Cumulative pull-ups milestones: 50, 200, 500, 2 000, 10 000.</p>
+<br>
+<h4 id="podtyagivaniya-ispytanie-vysoty-max-reps" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🦾 Pull-ups — Trial of Heights (max reps)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Maximum pull-ups in a single session: 5, 10, 15, 20, 25.</p>
+<br>
+<h4 id="prisedaniya-korni-duba-total-reps" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🦵 Squats — Oak Roots (total reps)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Cumulative squats milestones: 100, 500, 2 000, 10 000, 50 000.</p>
+<br>
+<h4 id="prisedaniya-stojkost-max-reps" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🦵 Squats — Resilience (max reps)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Maximum squats in a single session: 25, 50, 100, 200.</p>
+<br>
+<h4 id="press-dospehi-duha-total-reps" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🛡️ Abs — Spirit Armor (total reps)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Cumulative abs milestones: 100, 500, 2 000, 10 000.</p>
+<br>
+<h4 id="press-nesgibaemyj-sterzhen-max-reps" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🛡️ Abs — Unbreakable Core (max reps)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Maximum abs in a single session: 30, 75, 150.</p>
+<br>
+<h4 id="zakalka-v-kuzne-workout-count" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">⚔️ Forged in the Forge (workout count)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Total training sessions: 10, 25, 50, 100, 250, 500.</p>
+<br>
+<h4 id="referalnaya-sistema-referral" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🤝 Referral System</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Achievements for inviting friends via referral link: 1, 3, 5, 10 referrals.</p>
+<br>
+<h4 id="bratstvo-sily-social" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🤝 Brotherhood of Strength (social)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Achievements for subscriptions and being subscribed to by others.</p>
+<br>
+<h4 id="pedestal-slavy-leaderboard" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🏅 Podium of Glory (leaderboard)</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Achievements for reaching the top 3 of the daily/weekly/monthly leaderboard.</p>
+<br>
+<h3 id="42-ton-nagrady" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">4.2 Rewards</h3>
+<p style="margin: 10px 0; line-height: 1.6;">Each achievement grants gold coins. Coins are used to buy potions in the guild shop and to save streaks.</p>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="5-boevaya-sistema" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">5. Combat System</h2>
+<br>
+<h3 id="51-lichnye-monstry" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">5.1 Monsters</h3>
+<br>
+<h4 id="dostupnye-monstry" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">👹 Available Monsters</h4>
+<p style="margin: 10px 0; line-height: 1.6;">19 monsters from Slime to Dragon. Each monster is locked behind a minimum rank. Defeat it — the next one unlocks.</p>
+<br>
+<h4 id="mehanika-boya" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🎯 Battle Mechanics</h4>
+<ul style="margin: 10px 0; padding-left: 25px;">
+<li style="margin: 5px 0;">Each workout deals damage based on reps × exercise coefficient</li>
+<li style="margin: 5px 0;">The monster attacks back — you lose HP each day you skip training</li>
+<li style="margin: 5px 0;">Potions from the guild shop amplify your damage for one session</li>
+</ul>
+<br>
+<h4 id="otobrazhenie-progressa" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">📊 Progress Display</h4>
+<p style="margin: 10px 0; line-height: 1.6;">After each workout the bot shows: damage dealt, remaining HP, monster counter-attack, and current streak.</p>
+<br>
+<h3 id="52-rejd-bossy" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">5.2 Raid Bosses</h3>
+<br>
+<h4 id="mehanika-rejd-bossov" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">👾 Raid Boss Mechanics</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Community events where all users attack one shared boss. Bosses have two durations: 24 hours and 7 days. Every workout by any user deals damage to the boss. Everyone who participated receives a reward.</p>
+<br>
+<h4 id="tablica-liderov" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🏆 Leaderboard</h4>
+<p style="margin: 10px 0; line-height: 1.6;">During a raid boss event a live damage leaderboard is shown — see who dealt the most damage to the boss.</p>
+<br>
+<h4 id="avtomaticheskaya-proverka" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">⏰ Auto Check</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Raid bosses are automatically closed at the end of their duration. The bot notifies all participants and announces the winners.</p>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="6-socialnye-funkcii" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">6. Social Features</h2>
+<br>
+<h3 id="61-liderbordy" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">6.1 Leaderboards</h3>
+<br>
+<h4 id="komanda-leaderboard" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🏆 /leaderboard command</h4>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Command:</strong> <code>/rating</code></p>
+<p style="margin: 10px 0; line-height: 1.6;">Available periods: Today, Week, Month, All time. Rankings by total reps, XP, or streak.</p>
+<br>
+<h3 id="62-podpiski" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">6.2 Subscriptions</h3>
+<br>
+<h4 id="sistema-podpisok" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">👥 Subscription System</h4>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Command:</strong> <code>/subscribe</code></p>
+<p style="margin: 10px 0; line-height: 1.6;">Subscribe to friends' profiles to receive notifications when they log workouts. Motivate each other!</p>
+<br>
+<h3 id="63-referalnaya-sistema" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">6.3 Referral System</h3>
+<br>
+<h4 id="priglashenie-druzej" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🤝 Invite Friends</h4>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Command:</strong> <code>/referal</code></p>
+<p style="margin: 10px 0; line-height: 1.6;">Get a personal invite link. When a friend joins via your link: you both earn bonus XP and you unlock the next monster earlier.</p>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="7-sistema-serij" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">7. Streak System</h2>
+<br>
+<h3 id="71-otslezhivanie-serij" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">7.1 Streak Tracking</h3>
+<p style="margin: 10px 0; line-height: 1.6;">A streak is a consecutive sequence of days with at least one logged exercise. Visible on your profile. Streaks unlock special achievements and grant XP bonuses.</p>
+<br>
+<h3 id="72-sohranenie-serii" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">7.2 Streak Save</h3>
+<p style="margin: 10px 0; line-height: 1.6;">If you miss a day you can save your streak by spending gold coins. The bot will notify you about the option to save before the streak resets.</p>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="8-personalnye-nastrojki" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">8. Personal Settings</h2>
+<br>
+<h3 id="komanda-settings" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">⚙️ /settings command</h3>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Command:</strong> <code>/settings</code></p>
+<p style="margin: 10px 0; line-height: 1.6;">Manage post-workout notifications:</p>
+<ul style="margin: 10px 0; padding-left: 25px;">
+<li style="margin: 5px 0;">🎯 Rank progress</li>
+<li style="margin: 5px 0;">🏆 Achievements</li>
+<li style="margin: 5px 0;">⚔️ Battles (monsters and bosses)</li>
+<li style="margin: 5px 0;">🔥 Streak</li>
+</ul>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="9-pitanie-i-makrosy" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">9. Nutrition &amp; Macros</h2>
+<br>
+<h3 id="sistema-pitaniya" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">🥗 Nutrition System</h3>
+<br>
+<h4 id="sozdanie-profilya-pitaniya" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">📊 Creating a Nutrition Profile</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Set your daily calorie and macro targets (proteins, fats, carbs). The bot tracks intake against your goals.</p>
+<br>
+<h4 id="logirovanie-priyoma-pishhi" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">🍽️ Food Logging</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Log meals by name or barcode. The bot shows calories and macros and updates your daily totals.</p>
+<br>
+<h4 id="logirovanie-vesa" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">⚖️ Weight Logging</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Track body weight changes over time. The bot builds a progress chart.</p>
+<br>
+<h4 id="itogi-za-period" style="font-size: 20px; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">📈 Period Summary</h4>
+<p style="margin: 10px 0; line-height: 1.6;">Weekly and monthly summaries: calories consumed, macros, average weight.</p>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="10-multiyazychnost" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">10. Multilingual</h2>
+<br>
+<h3 id="podderzhka-yazykov" style="font-size: 24px; font-weight: bold; margin-top: 20px; margin-bottom: 10px;">🌍 Language Support</h3>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Command:</strong> <code>/language</code></p>
+<p style="margin: 10px 0; line-height: 1.6;">Available languages: Russian (ru), English (en), Ukrainian (uk). The entire bot interface switches — menus, messages, notifications.</p>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="nachalo-raboty" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">🚀 Getting Started</h2>
+<ol style="margin: 10px 0; padding-left: 25px;">
+<li style="margin: 5px 0;">Find <a href="https://t.me/SquatMasterBot" style="color: #0066cc;">@SquatMasterBot</a> in Telegram</li>
+<li style="margin: 5px 0;">Press <strong>Start</strong> — profile is created automatically</li>
+<li style="margin: 5px 0;">Log your first workout: type <code>pushups 20</code></li>
+<li style="margin: 5px 0;">Open <code>/hero</code> to see your profile and choose a monster</li>
+<li style="margin: 5px 0;">Accept a guild quest in <code>/guild</code></li>
+</ol>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="podderzhka" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">📞 Support</h2>
+<p style="margin: 10px 0; line-height: 1.6;">Questions and suggestions: <a href="https://t.me/sportbot_support" style="color: #0066cc;">community Telegram chat</a></p>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+<h2 id="vazhnye-primechaniya" style="font-size: 28px; font-weight: bold; margin-top: 25px; margin-bottom: 12px;">⚠️ Important Notes</h2>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Privacy:</strong></p>
+<ul style="margin: 10px 0; padding-left: 25px;">
+<li style="margin: 5px 0;">The bot does not store personal conversations</li>
+<li style="margin: 5px 0;">All training data is anonymised in public leaderboards</li>
+<li style="margin: 5px 0;">You can delete your account at any time</li>
+</ul>
+<br>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>TON Tokens:</strong></p>
+<ul style="margin: 10px 0; padding-left: 25px;">
+<li style="margin: 5px 0;">Rewards are credited automatically</li>
+<li style="margin: 5px 0;">Coins are spent on potions and streak saves</li>
+<li style="margin: 5px 0;">Tokens can be used inside the bot (streak save, future shop)</li>
+</ul>
+<br>
+<p style="margin: 10px 0; line-height: 1.6;"><strong>Technical Requirements:</strong></p>
+<ul style="margin: 10px 0; padding-left: 25px;">
+<li style="margin: 5px 0;">Telegram account</li>
+<li style="margin: 5px 0;">Stable internet connection for Mini Apps (calendar)</li>
+</ul>
+<br>
+<hr style="border: 1px solid #ccc; margin: 20px 0;">
+<br>
+    </div>
+    </div><!-- #commands-en -->
 
     <footer>
-        <p><strong>SportBot</strong> — Превращай тренировки в достижения!</p>
+        <p><strong>SportBot</strong> — Turn workouts into achievements!</p>
         <p style="margin-top: 1rem; opacity: 0.8;">
-            <a href="index.html">Главная</a> |
-            <a href="changelog.html">Обновления</a> |
+            <a href="index.html" data-i18n="footer.home">Главная</a> |
+            <a href="changelog.html" data-i18n="nav.updates">Обновления</a> |
             <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank">Telegram</a>
         </p>
         <p style="margin-top: 1rem; opacity: 0.6;">&copy; 2026 SportBot</p>
     </footer>
+    <script src="i18n.js"></script>
 </body>
 </html>

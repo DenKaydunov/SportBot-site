@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>SportBot - Фитнес RPG бот в Telegram | Превращай тренировки в игру</title>
-    <meta name="description" content="Геймифицированный фитнес-бот для Telegram. 121+ достижений, рейд-боссы, монстры, приключения, гильдия с квестами. Отжимания, подтягивания, приседания, пресс — всё в одном месте!">
+    <title id="meta-title">SportBot - Фитнес RPG бот в Telegram | Превращай тренировки в игру</title>
+    <meta id="meta-desc" name="description" content="Геймифицированный фитнес-бот для Telegram. 121+ достижений, рейд-боссы, монстры, приключения, гильдия с квестами. Отжимания, подтягивания, приседания, пресс — всё в одном месте!">
     <meta name="keywords" content="фитнес бот telegram, тренировки telegram, отжимания бот, подтягивания бот, геймификация фитнес, SportBot, RPG приключение">
     <meta name="author" content="Denis Kaydunov">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="SportBot - Фитнес RPG бот в Telegram">
-    <meta property="og:description" content="Превращай тренировки в эпическое приключение! 121+ достижений, рейд-боссы, игровые награды.">
+    <meta id="og-title" property="og:title" content="SportBot - Фитнес RPG бот в Telegram">
+    <meta id="og-desc" property="og:description" content="Превращай тренировки в эпическое приключение! 121+ достижений, рейд-боссы, игровые награды.">
     <meta property="og:url" content="https://denkaydunov.github.io/SportBot-site/">
-    <meta property="og:locale" content="ru_RU">
+    <meta id="og-locale" property="og:locale" content="ru_RU">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SportBot - Фитнес RPG бот">
-    <meta name="twitter:description" content="Геймифицированный фитнес в Telegram">
+    <meta id="tw-title" name="twitter:title" content="SportBot - Фитнес RPG бот">
+    <meta id="tw-desc" name="twitter:description" content="Геймифицированный фитнес в Telegram">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://denkaydunov.github.io/SportBot-site/">
@@ -558,10 +558,37 @@
                 font-size: 1rem;
             }
         }
+
+        #lang-widget {
+            position: fixed;
+            top: 1.25rem;
+            left: 1.5rem;
+            z-index: 999;
+        }
+        #lang-toggle {
+            background: rgba(26,26,26,0.85);
+            border: 1.5px solid rgba(255,255,255,0.4);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+            backdrop-filter: blur(6px);
+            line-height: 1;
+        }
+        #lang-toggle:hover, #lang-toggle.lang-active-en {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
     </style>
 </head>
-<body>
-    <!-- Hero Section -->
+<body data-page="index">
+    <!-- Lang switcher -->
+    <div id="lang-widget">
+        <button id="lang-toggle" onclick="toggleLang()">🇷🇺 RU</button>
+    </div>
     <section class="hero">
         <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
             <source src="video/Воин_и_магический_интерфейс.mp4" type="video/mp4">
@@ -570,10 +597,10 @@
         <img src="SportBot logo.png" alt="SportBot Logo" class="hero-logo">
         <div class="hero-content">
             <h1><span style="color: var(--primary);">SportBot</span></h1>
-            <p class="subtitle">Превращай тренировки в эпическое приключение! Гильдия с квестами, личные монстры, рейд-боссы, достижения и RPG-истории — всё в одном боте.</p>
+            <p class="subtitle" data-i18n="index.hero.subtitle">Превращай тренировки в эпическое приключение! Гильдия с квестами, личные монстры, рейд-боссы, достижения и RPG-истории — всё в одном боте.</p>
             <div class="hero-buttons">
-                <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" class="btn-primary" target="_blank">⚔️ Начать игру</a>
-                <a href="guide.html" class="btn-secondary">📖 Полное руководство</a>
+                <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" class="btn-primary" target="_blank" data-i18n="index.hero.btn_play">⚔️ Начать игру</a>
+                <a href="guide.html" class="btn-secondary" data-i18n="index.hero.btn_guide">📖 Полное руководство</a>
             </div>
         </div>
     </section>
@@ -583,23 +610,23 @@
         <div class="stats-grid">
             <div class="stat-item">
                 <div class="stat-number">121+</div>
-                <div class="stat-label">Достижений</div>
+                <div class="stat-label" data-i18n="index.stats.achievements">Достижений</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">30</div>
-                <div class="stat-label">Уровней рангов</div>
+                <div class="stat-label" data-i18n="index.stats.ranks">Уровней рангов</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">4</div>
-                <div class="stat-label">Типа упражнений</div>
+                <div class="stat-label" data-i18n="index.stats.exercises">Типа упражнений</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number" id="users-count">0</div>
-                <div class="stat-label">Пользователей</div>
+                <div class="stat-label" data-i18n="index.stats.users">Пользователей</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number" id="reps-count">0</div>
-                <div class="stat-label">Повторений выполнено</div>
+                <div class="stat-label" data-i18n="index.stats.reps">Повторений выполнено</div>
             </div>
         </div>
     </section>
@@ -607,56 +634,56 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title"><span style="color: var(--primary);">Ключевые возможности</span></h2>
-            <p class="section-subtitle">Всё что нужно для мотивированных тренировок в одном боте</p>
+            <h2 class="section-title"><span style="color: var(--primary);" data-i18n="index.features.title">Ключевые возможности</span></h2>
+            <p class="section-subtitle" data-i18n="index.features.subtitle">Всё что нужно для мотивированных тренировок в одном боте</p>
 
             <div class="features-grid">
                 <a href="guide.html#achievements" class="feature-card">
                     <div class="feature-icon">🏆</div>
-                    <h3 class="feature-title">121+ Достижений</h3>
-                    <p class="feature-description">Разблокируй уникальные достижения за серии тренировок, рекорды и прогресс. Каждое достижение награждает игровыми монетами!</p>
+                    <h3 class="feature-title" data-i18n="index.feat1.title">121+ Достижений</h3>
+                    <p class="feature-description" data-i18n="index.feat1.desc">Разблокируй уникальные достижения за серии тренировок, рекорды и прогресс. Каждое достижение награждает игровыми монетами!</p>
                 </a>
 
                 <a href="guide.html#battles" class="feature-card">
                     <div class="feature-icon">⚔️</div>
-                    <h3 class="feature-title">Боевая система</h3>
-                    <p class="feature-description">Сражайся с личными монстрами соло, участвуй в кооперативных рейд-боссах всем сообществом и выходи на Арену PvP в дуэлях 1v1. Каждая тренировка наносит урон — побеждай и получай награды!</p>
+                    <h3 class="feature-title" data-i18n="index.feat2.title">Боевая система</h3>
+                    <p class="feature-description" data-i18n="index.feat2.desc">Сражайся с личными монстрами соло, участвуй в кооперативных рейд-боссах всем сообществом и выходи на Арену PvP в дуэлях 1v1. Каждая тренировка наносит урон — побеждай и получай награды!</p>
                 </a>
 
                 <a href="commands.html" class="feature-card">
                     <div class="feature-icon">📋</div>
-                    <h3 class="feature-title">Персональная программа</h3>
-                    <p class="feature-description">Бот строит индивидуальный план тренировок с прогрессией нагрузки. Выполняй — и с каждой неделей становишься сильнее.</p>
+                    <h3 class="feature-title" data-i18n="index.feat3.title">Персональная программа</h3>
+                    <p class="feature-description" data-i18n="index.feat3.desc">Бот строит индивидуальный план тренировок с прогрессией нагрузки. Выполняй — и с каждой неделей становишься сильнее.</p>
                 </a>
 
                 <a href="guide.html#adventure" class="feature-card">
                     <div class="feature-icon">📜</div>
-                    <h3 class="feature-title">RPG-приключения</h3>
-                    <p class="feature-description">Проходи интерактивные истории с разветвлёнными сюжетами и испытаниями. Выполняй физические челленджи прямо внутри сюжета!</p>
+                    <h3 class="feature-title" data-i18n="index.feat4.title">RPG-приключения</h3>
+                    <p class="feature-description" data-i18n="index.feat4.desc">Проходи интерактивные истории с разветвлёнными сюжетами и испытаниями. Выполняй физические челленджи прямо внутри сюжета!</p>
                 </a>
 
                 <a href="guide.html#guild-quest" class="feature-card">
                     <div class="feature-icon">🏰</div>
-                    <h3 class="feature-title">Гильдия героев</h3>
-                    <p class="feature-description">Принимай ежедневные квесты, покупай зелья урона в магазине гильдии и получай золото за победы над монстрами!</p>
+                    <h3 class="feature-title" data-i18n="index.feat5.title">Гильдия героев</h3>
+                    <p class="feature-description" data-i18n="index.feat5.desc">Принимай ежедневные квесты, покупай зелья урона в магазине гильдии и получай золото за победы над монстрами!</p>
                 </a>
 
                 <a href="guide.html#adventure" class="feature-card">
                     <div class="feature-icon">📷</div>
-                    <h3 class="feature-title">AR-тренировки</h3>
-                    <p class="feature-description">Тренируйся прямо через камеру — бот считает повторения в реальном времени с помощью дополненной реальности. Поддержка 4 упражнений!</p>
+                    <h3 class="feature-title" data-i18n="index.feat6.title">AR-тренировки</h3>
+                    <p class="feature-description" data-i18n="index.feat6.desc">Тренируйся прямо через камеру — бот считает повторения в реальном времени с помощью дополненной реальности. Поддержка 4 упражнений!</p>
                 </a>
 
                 <a href="guide.html#survival" class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Режим Выживания</h3>
-                    <p class="feature-description">Интенсивный режим тренировки с нарастающей сложностью. Держись как можно дольше — каждый раунд требует больше повторений!</p>
+                    <h3 class="feature-title" data-i18n="index.feat7.title">Режим Выживания</h3>
+                    <p class="feature-description" data-i18n="index.feat7.desc">Интенсивный режим тренировки с нарастающей сложностью. Держись как можно дольше — каждый раунд требует больше повторений!</p>
                 </a>
 
                 <a href="https://denkaydunov.github.io/StalionBot-site/" class="feature-card" target="_blank" style="border-color: rgba(176,134,11,0.4);">
                     <div class="feature-icon">☣️</div>
-                    <h3 class="feature-title">СТАЛИОН — тёмный СССР</h3>
-                    <p class="feature-description">Альтернативный бот в сеттинге «СССР × некрогаз»: заражённые монстры, Некро-Титаны, рейд-боссы и советская эстетика. Для любителей тёмного лора!</p>
+                    <h3 class="feature-title" data-i18n="index.feat8.title">СТАЛИОН — тёмный СССР</h3>
+                    <p class="feature-description" data-i18n="index.feat8.desc">Альтернативный бот в сеттинге «СССР × некрогаз»: заражённые монстры, Некро-Титаны, рейд-боссы и советская эстетика. Для любителей тёмного лора!</p>
                 </a>
 
             </div>
@@ -668,37 +695,37 @@
     <!-- Social Proof Section -->
     <section style="padding: 6rem 0; background: #1e1e1e;">
         <div class="container">
-            <h2 class="section-title"><span style="color: var(--primary);">Реальные результаты</span></h2>
-            <p class="section-subtitle" style="margin-bottom: 3rem;">Игроки, которые тренировались каждый день</p>
+            <h2 class="section-title"><span style="color: var(--primary);" data-i18n="index.social.title">Реальные результаты</span></h2>
+            <p class="section-subtitle" style="margin-bottom: 3rem;" data-i18n="index.social.subtitle">Игроки, которые тренировались каждый день</p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
 
                 <div style="background: #242424; border: 1px solid #333; border-radius: 16px; padding: 1.75rem;">
                     <div style="font-size: 2rem; margin-bottom: 0.75rem;">💪</div>
-                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">2 → 22</div>
-                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;">подтягивания за 6 месяцев</div>
-                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;">Начинал с 2 подтягиваний. Полгода ежедневных боёв с монстрами — и личный рекорд вырос до 22.</p>
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;" data-i18n="index.s1.stat">2 → 22</div>
+                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;" data-i18n="index.s1.label">подтягивания за 6 месяцев</div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;" data-i18n="index.s1.text">Начинал с 2 подтягиваний. Полгода ежедневных боёв с монстрами — и личный рекорд вырос до 22.</p>
                 </div>
 
                 <div style="background: #242424; border: 1px solid #333; border-radius: 16px; padding: 1.75rem;">
                     <div style="font-size: 2rem; margin-bottom: 0.75rem;">🔥</div>
-                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem; white-space: nowrap;">20 000 + 10 000</div>
-                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;">отжиманий и подтягиваний суммарно</div>
-                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;">20 000 отжиманий и 10 000 подтягиваний — не за один раз, а шаг за шагом, убивая боссов каждый день.</p>
+                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem; white-space: nowrap;" data-i18n="index.s2.stat">20 000 + 10 000</div>
+                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;" data-i18n="index.s2.label">отжиманий и подтягиваний суммарно</div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;" data-i18n="index.s2.text">20 000 отжиманий и 10 000 подтягиваний — не за один раз, а шаг за шагом, убивая боссов каждый день.</p>
                 </div>
 
                 <div style="background: #242424; border: 1px solid #333; border-radius: 16px; padding: 1.75rem;">
                     <div style="font-size: 2rem; margin-bottom: 0.75rem;">⚡</div>
-                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">1 000</div>
-                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;">отжиманий за один день</div>
-                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;">Год тренировок в боте — и однажды просто сделал 1 000 отжиманий за день. Потому что мог.</p>
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;" data-i18n="index.s3.stat">1 000</div>
+                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;" data-i18n="index.s3.label">отжиманий за один день</div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;" data-i18n="index.s3.text">Год тренировок в боте — и однажды просто сделал 1 000 отжиманий за день. Потому что мог.</p>
                 </div>
 
                 <div style="background: #242424; border: 1px solid #333; border-radius: 16px; padding: 1.75rem;">
                     <div style="font-size: 2rem; margin-bottom: 0.75rem;">⚖️</div>
-                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">−5 кг</div>
-                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;">сброшенного веса</div>
-                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;">Просто уничтожал монстров каждый день. Не думал о диете — думал об убийстве боссов. Минус 5 кг.</p>
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;" data-i18n="index.s4.stat">−5 кг</div>
+                    <div style="font-size: 0.85rem; color: #999; margin-bottom: 1rem;" data-i18n="index.s4.label">сброшенного веса</div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6;" data-i18n="index.s4.text">Просто уничтожал монстров каждый день. Не думал о диете — думал об убийстве боссов. Минус 5 кг.</p>
                 </div>
 
             </div>
@@ -708,37 +735,37 @@
     <!-- App Preview Section -->
     <section style="padding: 6rem 0 6rem; background: var(--dark); color: var(--white);">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: 1rem;"><span style="color: var(--primary);">Всё прямо в Telegram</span></h2>
-            <p class="section-subtitle" style="margin-bottom: 3rem;">Никаких сторонних приложений — Mini App встроен в чат</p>
+            <h2 class="section-title" style="margin-bottom: 1rem;"><span style="color: var(--primary);" data-i18n="index.app.title">Всё прямо в Telegram</span></h2>
+            <p class="section-subtitle" style="margin-bottom: 3rem;" data-i18n="index.app.subtitle">Никаких сторонних приложений — Mini App встроен в чат</p>
         </div>
         <div class="screens-carousel" id="screensCarousel">
             <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
                 <img src="img/hero-app-screenshot.png" alt="Профиль героя">
-                <p>Профиль героя</p>
+                <p data-i18n="index.screen1">Профиль героя</p>
             </div>
             <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
                 <img src="img/battle-screenshot.png" alt="Битва с монстром">
-                <p>Битва с монстром</p>
+                <p data-i18n="index.screen2">Битва с монстром</p>
             </div>
             <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
                 <img src="img/leaderboard-screenshot.png" alt="Лидерборд">
-                <p>Лидерборд</p>
+                <p data-i18n="index.screen3">Лидерборд</p>
             </div>
             <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
                 <img src="img/calendar-screenshot.png" alt="Календарь тренировок">
-                <p>Календарь</p>
+                <p data-i18n="index.screen4">Календарь</p>
             </div>
             <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
                 <img src="img/achievements-screenshot.png" alt="Достижения">
-                <p>Достижения</p>
+                <p data-i18n="index.screen5">Достижения</p>
             </div>
             <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
                 <img src="img/shop-screenshot.png" alt="Лавка">
-                <p>Лавка</p>
+                <p data-i18n="index.screen6">Лавка</p>
             </div>
             <div class="screen-item" onclick="openScreenLightbox(this.querySelector('img'))">
                 <img src="img/community-screenshot.png" alt="Сообщество таверны">
-                <p>Сообщество</p>
+                <p data-i18n="index.screen7">Сообщество</p>
             </div>
         </div>
     </section>
@@ -863,14 +890,14 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2 class="section-title"><span style="color: var(--primary);">Рейд-боссы</span></h2>
-            <p class="raid-text-sub" style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 3rem;">Кооперативные события, где все пользователи атакуют одного общего босса. Каждая тренировка наносит урон — побеждай вместе с сообществом!</p>
+            <h2 class="section-title"><span style="color: var(--primary);" data-i18n="index.raid.title">Рейд-боссы</span></h2>
+            <p class="raid-text-sub" style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 3rem;" data-i18n="index.raid.subtitle">Кооперативные события, где все пользователи атакуют одного общего босса. Каждая тренировка наносит урон — побеждай вместе с сообществом!</p>
             <div class="cta-images" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
                 <img src="img/monster/King 24h battle.png" alt="Рейд-Босс: Король Лени" style="width: 400px; height: auto; border-radius: 20px; box-shadow: 0 20px 60px rgba(127, 217, 87, 0.3);">
                 <img src="img/monster/Procrastination 7d.png" alt="Рейд-Босс: Прокрастинация" style="width: 400px; height: auto; border-radius: 20px; box-shadow: 0 20px 60px rgba(127, 217, 87, 0.3);">
             </div>
-            <h2>Готов начать свою фитнес-битву?</h2>
-            <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" class="btn-primary" target="_blank">⚔️ Начать игру</a>
+            <h2 data-i18n="index.cta.h2">Готов начать свою фитнес-битву?</h2>
+            <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" class="btn-primary" target="_blank" data-i18n="index.cta.btn">⚔️ Начать игру</a>
         </div>
     </section>
 
@@ -878,27 +905,27 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>О проекте</h3>
-                <p>SportBot — геймифицированный фитнес-бот для Telegram, который превращает тренировки в эпическое RPG-приключение.</p>
+                <h3 data-i18n="index.footer.about.title">О проекте</h3>
+                <p data-i18n="index.footer.about.text">SportBot — геймифицированный фитнес-бот для Telegram, который превращает тренировки в эпическое RPG-приключение.</p>
             </div>
 
             <div class="footer-section">
-                <h3>Быстрые ссылки</h3>
-                <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank">Запустить бота</a>
-                <a href="guide.html">Полное руководство</a>
-                <a href="changelog.html">История обновлений</a>
+                <h3 data-i18n="index.footer.links.title">Быстрые ссылки</h3>
+                <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank" data-i18n="index.footer.links.start">Запустить бота</a>
+                <a href="guide.html" data-i18n="index.footer.links.guide">Полное руководство</a>
+                <a href="changelog.html" data-i18n="index.footer.links.log">История обновлений</a>
             </div>
 
             <div class="footer-section">
-                <h3>Наши боты</h3>
-                <a href="https://t.me/SquatMasterBot?start=utm_webSportBot310726" target="_blank">⚔️ SportBot — фитнес RPG</a>
-                <a href="https://denkaydunov.github.io/StalionBot-site/" target="_blank">☣️ СТАЛИОН — тёмный СССР</a>
-                <a href="https://t.me/StalionRPGBot?start=utm_webStalion310726" target="_blank">→ Запустить СТАЛИОН</a>
+                <h3 data-i18n="index.footer.bots.title">Наши боты</h3>
+                <a href="https://t.me/SquatMasterBot?start=utm_webSportBot310726" target="_blank" data-i18n="index.footer.bots.sportbot">⚔️ SportBot — фитнес RPG</a>
+                <a href="https://denkaydunov.github.io/StalionBot-site/" target="_blank" data-i18n="index.footer.bots.stalion">☣️ СТАЛИОН — тёмный СССР</a>
+                <a href="https://t.me/StalionRPGBot?start=utm_webStalion310726" target="_blank" data-i18n="index.footer.bots.stalion_launch">→ Запустить СТАЛИОН</a>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 SportBot. Все права защищены. &nbsp;·&nbsp; <a href="https://www.instagram.com/kaydunov_denis" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">Instagram</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@rpg_sport_bot" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">TikTok</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@TgSportBot" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">YouTube</a></p>
+            <p><span data-i18n="index.footer.copy">© 2026 SportBot. Все права защищены.</span> &nbsp;·&nbsp; <a href="https://www.instagram.com/kaydunov_denis" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">Instagram</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@rpg_sport_bot" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">TikTok</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@TgSportBot" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">YouTube</a></p>
         </div>
     </footer>
     <script>
@@ -946,17 +973,23 @@
 
             const timer = setInterval(() => {
                 current += increment;
+                const lang = window._currentLang || 'ru';
+                const dict = window.I18N && window.I18N[lang];
+                const suffixMid = (dict && dict['index.reps_suffix_mid']) || 'к';
+                const suffixFinal = (dict && dict['index.reps_suffix']) || 'к+';
                 if (current >= target) {
                     current = target;
                     clearInterval(timer);
-                    counter.textContent = target + 'к+';
+                    counter._finalValue = target;
+                    counter.textContent = target + suffixFinal;
                 } else {
-                    counter.textContent = Math.floor(current) + 'к';
+                    counter.textContent = Math.floor(current) + suffixMid;
                 }
             }, 16);
         }
 
         window.addEventListener('load', () => { animateCounter(); animateReps(); });
     </script>
+    <script src="i18n.js"></script>
 </body>
 </html>

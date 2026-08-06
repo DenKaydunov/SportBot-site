@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SportBot — История обновлений</title>
-    <meta name="description" content="История обновлений SportBot — новые функции, улучшения и исправления по месяцам.">
+    <title id="meta-title">SportBot — История обновлений</title>
+    <meta id="meta-desc" name="description" content="История обновлений SportBot — новые функции, улучшения и исправления по месяцам.">
     <meta name="author" content="Denis Kaydunov">
     <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="SportBot — История обновлений">
-    <meta property="og:description" content="Следи за развитием бота — новые фичи, баланс, исправления по месяцам.">
+    <meta id="og-title" property="og:title" content="SportBot — История обновлений">
+    <meta id="og-desc" property="og:description" content="Следи за развитием бота — новые фичи, баланс, исправления по месяцам.">
     <meta property="og:url" content="https://denkaydunov.github.io/SportBot-site/changelog.html">
-    <meta property="og:locale" content="ru_RU">
+    <meta id="og-locale" property="og:locale" content="ru_RU">
 
     <link rel="canonical" href="https://denkaydunov.github.io/SportBot-site/changelog.html">
 
@@ -214,26 +214,44 @@
             nav { padding: 0.75rem 1rem; }
             .nav-links { gap: 1rem; }
         }
+
+        #lang-toggle {
+            background: transparent;
+            border: 1.5px solid rgba(255,255,255,0.4);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+            line-height: 1;
+        }
+        #lang-toggle:hover, #lang-toggle.lang-active-en {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
     </style>
 </head>
-<body>
+<body data-page="changelog">
 
 <nav>
     <a href="index.html" class="nav-logo">⚔️ SportBot</a>
     <ul class="nav-links">
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="guide.html">Гайд</a></li>
-        <li><a href="commands.html">Команды</a></li>
-        <li><a href="changelog.html" class="active">Обновления</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+        <li><a href="guide.html" data-i18n="nav.guide">Гайд</a></li>
+        <li><a href="commands.html" data-i18n="nav.commands">Команды</a></li>
+        <li><a href="changelog.html" class="active" data-i18n="nav.updates">Обновления</a></li>
+        <li><button id="lang-toggle" onclick="toggleLang()">🇷🇺 RU</button></li>
     </ul>
 </nav>
 
 <div class="page-hero">
-    <h1>История <span>обновлений</span></h1>
-    <p>Новые функции, улучшения и исправления — всё что появилось в боте</p>
+    <h1 data-i18n="changelog.hero.h1">История <span>обновлений</span></h1>
+    <p data-i18n="changelog.hero.p">Новые функции, улучшения и исправления — всё что появилось в боте</p>
 </div>
 
-<div class="changelog-wrap">
+<div class="changelog-wrap" id="changelog-ru">
 
     <!-- ======= ИЮЛЬ 2026 ======= -->
     <div class="month-block">
@@ -246,7 +264,7 @@
         <div class="entry">
             <div class="entry-date">22 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">📷 <strong>AR-тренировка через камеру</strong> — 4 упражнения (отжимания, приседания, подтягивания, пресс), подсчёт повторений в реальном времени прямо на телефоне</div>
             </div>
         </div>
@@ -254,7 +272,7 @@
         <div class="entry">
             <div class="entry-date">22 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">🔒 <strong>Конфиденциальность:</strong> видео не покидает устройство — распознавание через Google MediaPipe Pose, сервер получает только итоговый счёт повторений</div>
             </div>
         </div>
@@ -262,7 +280,7 @@
         <div class="entry">
             <div class="entry-date">22 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">🎮 <strong>Игровая механика камеры:</strong> 5 раундов с 90-сек отдыхом, монстр атакует в ответ (скорость от ранга), паузы на 20/40/60/80% HP, Storm Mode ⚡ без отдыха для опытных</div>
             </div>
         </div>
@@ -270,7 +288,7 @@
         <div class="entry">
             <div class="entry-date">22 июля</div>
             <div class="entry-card">
-                <span class="tag tag-ui">UI</span>
+                <span class="tag tag-ui" data-i18n="changelog.tag.ui">UI</span>
                 <div class="entry-text">📊 <strong>Минималистичная тема:</strong> тренировка без монстров — шкала времени вместо HP-бара. Гильдия, Лавка и Арена скрываются, интерфейс фокусируется на прогрессе</div>
             </div>
         </div>
@@ -278,7 +296,7 @@
         <div class="entry">
             <div class="entry-date">22 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">☣️ <strong>СТАЛИОН</strong> — отдельный бот в постапокалиптическом советском сеттинге. 19 монстров (Некро-слизень → Некро-Титан), 3 рейд-босса, своя валюта в рублях и весь интерфейс переименован под СССР-тематику</div>
             </div>
         </div>
@@ -286,7 +304,7 @@
         <div class="entry">
             <div class="entry-date">22 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Ранги получили классы и уровни — прогрессия стала детальнее</div>
             </div>
         </div>
@@ -294,7 +312,7 @@
         <div class="entry">
             <div class="entry-date">21 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Бот перешёл на Webhook — ответы быстрее и стабильнее. Время запуска сократилось с 25 до ~10 секунд</div>
             </div>
         </div>
@@ -302,7 +320,7 @@
         <div class="entry">
             <div class="entry-date">18 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Пять новых монстров в бестиарии: <strong>Чучело, Чумная крыса, Утопец, Воин-орк, Волколак</strong></div>
             </div>
         </div>
@@ -310,7 +328,7 @@
         <div class="entry">
             <div class="entry-date">18 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Арена: лог ударов в бою, уведомление о начале поединка и баннер</div>
             </div>
         </div>
@@ -318,7 +336,7 @@
         <div class="entry">
             <div class="entry-date">17 июля</div>
             <div class="entry-card">
-                <span class="tag tag-fix">Фикс</span>
+                <span class="tag tag-fix" data-i18n="changelog.tag.fix">Фикс</span>
                 <div class="entry-text">Текстовые команды упражнений сохраняются сразу — без лишнего шага подтверждения</div>
             </div>
         </div>
@@ -326,7 +344,7 @@
         <div class="entry">
             <div class="entry-date">17 июля</div>
             <div class="entry-card">
-                <span class="tag tag-fix">Фикс</span>
+                <span class="tag tag-fix" data-i18n="changelog.tag.fix">Фикс</span>
                 <div class="entry-text">Отображается реальная награда за победу над монстром в сообщении и журнале охотника</div>
             </div>
         </div>
@@ -334,7 +352,7 @@
         <div class="entry">
             <div class="entry-date">15 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Текстовый ввод упражнений в чате бота и голосовое распознавание тренировок</div>
             </div>
         </div>
@@ -342,7 +360,7 @@
         <div class="entry">
             <div class="entry-date">15 июля</div>
             <div class="entry-card">
-                <span class="tag tag-ui">UI</span>
+                <span class="tag tag-ui" data-i18n="changelog.tag.ui">UI</span>
                 <div class="entry-text">Дневные графики стали скроллируемыми — больше данных умещается на экране</div>
             </div>
         </div>
@@ -350,7 +368,7 @@
         <div class="entry">
             <div class="entry-date">15 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">В настройках появились ссылки на <strong>YouTube и TikTok</strong> SportBot</div>
             </div>
         </div>
@@ -358,7 +376,7 @@
         <div class="entry">
             <div class="entry-date">13 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Топ недели автоматически публикуется в чат таверны</div>
             </div>
         </div>
@@ -366,7 +384,7 @@
         <div class="entry">
             <div class="entry-date">10 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Секретный промокод для читателей сайта — действует до конца июля. Введи <strong>WEB-SPORTBOT-07-26</strong> в чате сообщества и получи награду 🤫</div>
             </div>
         </div>
@@ -374,7 +392,7 @@
         <div class="entry">
             <div class="entry-date">9 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Категория достижений <strong>Зелья</strong> (🧪) — награды за использование зелий в битвах</div>
             </div>
         </div>
@@ -382,7 +400,7 @@
         <div class="entry">
             <div class="entry-date">9 июля</div>
             <div class="entry-card">
-                <span class="tag tag-fix">Фикс</span>
+                <span class="tag tag-fix" data-i18n="changelog.tag.fix">Фикс</span>
                 <div class="entry-text">Счётчик непобранных наград теперь считает только активные — совпадает с видимым списком</div>
             </div>
         </div>
@@ -390,7 +408,7 @@
         <div class="entry">
             <div class="entry-date">9 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Модалка битвы в профиле Героя открывается сразу после записи упражнения</div>
             </div>
         </div>
@@ -398,7 +416,7 @@
         <div class="entry">
             <div class="entry-date">8 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Кнопка «Подписаться» в профиле другого игрока — подписка прямо из гостевого профиля</div>
             </div>
         </div>
@@ -406,7 +424,7 @@
         <div class="entry">
             <div class="entry-date">7 июля</div>
             <div class="entry-card">
-                <span class="tag tag-balance">Баланс</span>
+                <span class="tag tag-balance" data-i18n="changelog.tag.balance">Баланс</span>
                 <div class="entry-text">Нормализация коэффициентов сложности упражнений (отжимания = 1.0) и пересчёт порогов рангов</div>
             </div>
         </div>
@@ -414,7 +432,7 @@
         <div class="entry">
             <div class="entry-date">7 июля</div>
             <div class="entry-card">
-                <span class="tag tag-ui">UI</span>
+                <span class="tag tag-ui" data-i18n="changelog.tag.ui">UI</span>
                 <div class="entry-text">Подписи на барах стриков в статистике, переход в лидерборд на вкладку «Стрик»</div>
             </div>
         </div>
@@ -422,7 +440,7 @@
         <div class="entry">
             <div class="entry-date">5 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Женские варианты названий рангов — бот использует правильный род для каждого игрока</div>
             </div>
         </div>
@@ -430,7 +448,7 @@
         <div class="entry">
             <div class="entry-date">5 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Страница Героя: кнопки упражнений (2×2) с попапом-степпером для быстрого ввода повторений</div>
             </div>
         </div>
@@ -438,7 +456,7 @@
         <div class="entry">
             <div class="entry-date">3 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Страница <strong>Программа тренировок</strong> в WebApp (/program)</div>
             </div>
         </div>
@@ -446,7 +464,7 @@
         <div class="entry">
             <div class="entry-date">3 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Топ-3 лидерборда получают золото в еженедельном отчёте; реферер получает +10 золота при регистрации нового игрока</div>
             </div>
         </div>
@@ -463,7 +481,7 @@
         <div class="entry">
             <div class="entry-date">30 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Восстановление стрика за золото — кнопка в календаре тренировок</div>
             </div>
         </div>
@@ -471,7 +489,7 @@
         <div class="entry">
             <div class="entry-date">30 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Достижения Арены PvP — победы, поражения, количество матчей (категория ARENA)</div>
             </div>
         </div>
@@ -479,7 +497,7 @@
         <div class="entry">
             <div class="entry-date">29 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Хроно-печать</strong> — артефакт для продления времени рейд-босса за золото</div>
             </div>
         </div>
@@ -487,7 +505,7 @@
         <div class="entry">
             <div class="entry-date">29 июня</div>
             <div class="entry-card">
-                <span class="tag tag-ui">UI</span>
+                <span class="tag tag-ui" data-i18n="changelog.tag.ui">UI</span>
                 <div class="entry-text">Кнопка «Журнал охотника» вместо списка участников прямо в сообщении о рейд-боссе</div>
             </div>
         </div>
@@ -495,7 +513,7 @@
         <div class="entry">
             <div class="entry-date">26 июня</div>
             <div class="entry-card">
-                <span class="tag tag-ui">UI</span>
+                <span class="tag tag-ui" data-i18n="changelog.tag.ui">UI</span>
                 <div class="entry-text">WebApp: safe area на Android, кнопка администратора в настройках, убрана статистика из навбара</div>
             </div>
         </div>
@@ -503,7 +521,7 @@
         <div class="entry">
             <div class="entry-date">25 июня</div>
             <div class="entry-card">
-                <span class="tag tag-ui">UI</span>
+                <span class="tag tag-ui" data-i18n="changelog.tag.ui">UI</span>
                 <div class="entry-text">Fullscreen mini-app с safe area insets для iPhone с Dynamic Island</div>
             </div>
         </div>
@@ -511,7 +529,7 @@
         <div class="entry">
             <div class="entry-date">25 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Таверна:</strong> выпить пиво (шутки и оценки на 3 языках), игра в кости</div>
             </div>
         </div>
@@ -519,7 +537,7 @@
         <div class="entry">
             <div class="entry-date">25 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Оплата через <strong>Telegram Payments (bePaid, BYN)</strong> — покупка золота внутри Telegram</div>
             </div>
         </div>
@@ -527,7 +545,7 @@
         <div class="entry">
             <div class="entry-date">24 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Арена PvP</strong> — 30-минутные дуэли 1v1 через Telegram Mini App; победитель получает золото</div>
             </div>
         </div>
@@ -535,7 +553,7 @@
         <div class="entry">
             <div class="entry-date">24 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Онбординг: квест мастера гильдии, спавн Гигантской Крысы, подсказка Героя</div>
             </div>
         </div>
@@ -543,7 +561,7 @@
         <div class="entry">
             <div class="entry-date">23 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Оплата <strong>Telegram Stars</strong> — автоматическое пополнение золота</div>
             </div>
         </div>
@@ -551,7 +569,7 @@
         <div class="entry">
             <div class="entry-date">23 июня</div>
             <div class="entry-card">
-                <span class="tag tag-ui">UI</span>
+                <span class="tag tag-ui" data-i18n="changelog.tag.ui">UI</span>
                 <div class="entry-text">Лидерборд: закреплённая строка «Моя позиция», вкладки Стрик / Тренировки</div>
             </div>
         </div>
@@ -559,7 +577,7 @@
         <div class="entry">
             <div class="entry-date">22 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Косметический магазин</strong> — цвета ника, значки и титулы в лидерборде</div>
             </div>
         </div>
@@ -567,7 +585,7 @@
         <div class="entry">
             <div class="entry-date">22 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Достижения топ-5 по конкретному рейд-боссу</div>
             </div>
         </div>
@@ -575,7 +593,7 @@
         <div class="entry">
             <div class="entry-date">22 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Промокод для сообщества — достижение SOCIAL_COMMUNITY</div>
             </div>
         </div>
@@ -583,7 +601,7 @@
         <div class="entry">
             <div class="entry-date">22 июня</div>
             <div class="entry-card">
-                <span class="tag tag-ui">UI</span>
+                <span class="tag tag-ui" data-i18n="changelog.tag.ui">UI</span>
                 <div class="entry-text">Страница гильдии: прогресс-бар времени квеста, список участников, кнопка приключения</div>
             </div>
         </div>
@@ -591,7 +609,7 @@
         <div class="entry">
             <div class="entry-date">19 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">История запусков рейд-босса (run_number) — Журнал охотника показывает прошлые рейды</div>
             </div>
         </div>
@@ -599,7 +617,7 @@
         <div class="entry">
             <div class="entry-date">19 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Страница плейлиста <strong>Яндекс Музыка</strong> «Баллады Скитальца»</div>
             </div>
         </div>
@@ -607,7 +625,7 @@
         <div class="entry">
             <div class="entry-date">18 июня</div>
             <div class="entry-card">
-                <span class="tag tag-ui">UI</span>
+                <span class="tag tag-ui" data-i18n="changelog.tag.ui">UI</span>
                 <div class="entry-text">Иконка отряда и количество участников объединены в одну кликабельную строку</div>
             </div>
         </div>
@@ -615,7 +633,7 @@
         <div class="entry">
             <div class="entry-date">23 июня</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Монстр <strong>Сталион</strong> добавлен в бестиарий</div>
             </div>
         </div>
@@ -632,7 +650,7 @@
         <div class="entry">
             <div class="entry-date">Май</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>WebApp (Telegram Mini App)</strong> — полноценный интерфейс бота внутри Telegram</div>
             </div>
         </div>
@@ -640,7 +658,7 @@
         <div class="entry">
             <div class="entry-date">Май</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Страница <strong>Герой</strong> в WebApp — статистика, опыт, HP, текущий монстр</div>
             </div>
         </div>
@@ -648,7 +666,7 @@
         <div class="entry">
             <div class="entry-date">Май</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Страница <strong>Арена</strong> в WebApp — очередь на дуэль, статус матча</div>
             </div>
         </div>
@@ -656,7 +674,7 @@
         <div class="entry">
             <div class="entry-date">Май</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Страница <strong>Календарь</strong> — визуальный трекер тренировок по дням</div>
             </div>
         </div>
@@ -664,7 +682,7 @@
         <div class="entry">
             <div class="entry-date">Май</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Страница <strong>Лидерборд</strong> с фильтрами по упражнениям и периодам</div>
             </div>
         </div>
@@ -672,7 +690,7 @@
         <div class="entry">
             <div class="entry-date">Май</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Базар</strong> — магазин зелий, улучшений и косметики (ребрендинг магазина гильдии)</div>
             </div>
         </div>
@@ -680,7 +698,7 @@
         <div class="entry">
             <div class="entry-date">Май</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Сводка наград рейд-босса публикуется в чат сообщества</div>
             </div>
         </div>
@@ -697,7 +715,7 @@
         <div class="entry">
             <div class="entry-date">Апрель</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Рейд-боссы</strong> — командные битвы: урон считается по суммарным повторениям от всех участников</div>
             </div>
         </div>
@@ -705,7 +723,7 @@
         <div class="entry">
             <div class="entry-date">Апрель</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Гильдейские квесты</strong> — ежедневные задания для всего сообщества</div>
             </div>
         </div>
@@ -713,7 +731,7 @@
         <div class="entry">
             <div class="entry-date">Апрель</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Магазин гильдии: зелья урона, опыта и стрика</div>
             </div>
         </div>
@@ -721,7 +739,7 @@
         <div class="entry">
             <div class="entry-date">Апрель</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>RPG-приключения</strong> — интерактивные истории с физическими испытаниями</div>
             </div>
         </div>
@@ -729,7 +747,7 @@
         <div class="entry">
             <div class="entry-date">Апрель</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Журнал охотника — история атак, урона и наград от рейд-боссов</div>
             </div>
         </div>
@@ -746,7 +764,7 @@
         <div class="entry">
             <div class="entry-date">9 марта</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Поздравления при получении достижения — бот отправляет сообщение с конфетти</div>
             </div>
         </div>
@@ -754,7 +772,7 @@
         <div class="entry">
             <div class="entry-date">8 марта</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Еженедельный отчёт с личной статистикой и позицией в лидерборде</div>
             </div>
         </div>
@@ -762,7 +780,7 @@
         <div class="entry">
             <div class="entry-date">7 марта</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Серии (стрики) — система непрерывных дней тренировок с бонусами</div>
             </div>
         </div>
@@ -770,7 +788,7 @@
         <div class="entry">
             <div class="entry-date">6 марта</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Редактирование профиля — имя, пол, аватар</div>
             </div>
         </div>
@@ -778,7 +796,7 @@
         <div class="entry">
             <div class="entry-date">4 марта</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Прогресс за день — сводка тренировки по итогам дня</div>
             </div>
         </div>
@@ -786,7 +804,7 @@
         <div class="entry">
             <div class="entry-date">2 марта</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Итоги дня — автоматическое сообщение с результатами в конце дня</div>
             </div>
         </div>
@@ -803,7 +821,7 @@
         <div class="entry">
             <div class="entry-date">19 февр.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Соперники — сравнение результатов с другими игроками</div>
             </div>
         </div>
@@ -811,7 +829,7 @@
         <div class="entry">
             <div class="entry-date">9 февр.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Упражнение <strong>Пресс</strong> — счётчик, статистика и достижения</div>
             </div>
         </div>
@@ -819,7 +837,7 @@
         <div class="entry">
             <div class="entry-date">3 февр.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Перевод на <strong>Cloud Run (GCP)</strong> — бот работает быстрее и стабильнее</div>
             </div>
         </div>
@@ -836,7 +854,7 @@
         <div class="entry">
             <div class="entry-date">7 янв.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Подписки</strong> — подписывайся на других игроков и следи за их прогрессом</div>
             </div>
         </div>
@@ -844,7 +862,7 @@
         <div class="entry">
             <div class="entry-date">5 янв.</div>
             <div class="entry-card">
-                <span class="tag tag-ui">UI</span>
+                <span class="tag tag-ui" data-i18n="changelog.tag.ui">UI</span>
                 <div class="entry-text">Пагинация в лидерборде и истории упражнений</div>
             </div>
         </div>
@@ -861,7 +879,7 @@
         <div class="entry">
             <div class="entry-date">8 дек.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Система рангов</strong> — 30 рангов от Новобранца до Легенды, повышение за XP</div>
             </div>
         </div>
@@ -869,7 +887,7 @@
         <div class="entry">
             <div class="entry-date">3 дек.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Теги пользователей — метки для сегментации и персонализации</div>
             </div>
         </div>
@@ -877,7 +895,7 @@
         <div class="entry">
             <div class="entry-date">1 дек.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Деплой через <strong>Docker + GCP App Engine</strong></div>
             </div>
         </div>
@@ -894,7 +912,7 @@
         <div class="entry">
             <div class="entry-date">6 нояб.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Нормализованные типы упражнений — единый API для всех видов активности</div>
             </div>
         </div>
@@ -902,7 +920,7 @@
         <div class="entry">
             <div class="entry-date">5 нояб.</div>
             <div class="entry-card">
-                <span class="tag tag-fix">Фикс</span>
+                <span class="tag tag-fix" data-i18n="changelog.tag.fix">Фикс</span>
                 <div class="entry-text">Глобальный обработчик ошибок — понятные сообщения вместо стектрейсов</div>
             </div>
         </div>
@@ -910,7 +928,7 @@
         <div class="entry">
             <div class="entry-date">3 нояб.</div>
             <div class="entry-card">
-                <span class="tag tag-fix">Фикс</span>
+                <span class="tag tag-fix" data-i18n="changelog.tag.fix">Фикс</span>
                 <div class="entry-text">Исправлен расчёт программы тренировок</div>
             </div>
         </div>
@@ -927,7 +945,7 @@
         <div class="entry">
             <div class="entry-date">13 окт.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Профиль игрока</strong> — статистика, ранг, достижения в одном экране</div>
             </div>
         </div>
@@ -935,7 +953,7 @@
         <div class="entry">
             <div class="entry-date">3 окт.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Мотивационные фразы — бот поздравляет с тренировкой случайной цитатой</div>
             </div>
         </div>
@@ -952,7 +970,7 @@
         <div class="entry">
             <div class="entry-date">19 сент.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Мотивация — персонализированные сообщения на основе истории тренировок</div>
             </div>
         </div>
@@ -960,7 +978,7 @@
         <div class="entry">
             <div class="entry-date">7 сент.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Интеграция с <strong>Google Cloud Platform</strong> — вебхук и хостинг</div>
             </div>
         </div>
@@ -968,7 +986,7 @@
         <div class="entry">
             <div class="entry-date">5 сент.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Лидерборд</strong> — рейтинг игроков по количеству повторений</div>
             </div>
         </div>
@@ -985,7 +1003,7 @@
         <div class="entry">
             <div class="entry-date">31 авг.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text"><strong>Программа тренировок</strong> — персональный план с прогрессией нагрузки</div>
             </div>
         </div>
@@ -993,7 +1011,7 @@
         <div class="entry">
             <div class="entry-date">20 авг.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Записи максимума за тренировку — рекорды по каждому упражнению</div>
             </div>
         </div>
@@ -1001,7 +1019,7 @@
         <div class="entry">
             <div class="entry-date">20 авг.</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">CI/CD через GitHub Actions — автоматическая проверка сборки</div>
             </div>
         </div>
@@ -1018,7 +1036,7 @@
         <div class="entry">
             <div class="entry-date">21 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Регистрация пользователей и запись результатов тренировок</div>
             </div>
         </div>
@@ -1026,7 +1044,7 @@
         <div class="entry">
             <div class="entry-date">20 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">Поддержка упражнений: <strong>отжимания, подтягивания, приседания</strong></div>
             </div>
         </div>
@@ -1034,7 +1052,7 @@
         <div class="entry">
             <div class="entry-date">3 июля</div>
             <div class="entry-card">
-                <span class="tag tag-feat">Новое</span>
+                <span class="tag tag-feat" data-i18n="changelog.tag.feat">Новое</span>
                 <div class="entry-text">🚀 <strong>Первый запуск SportBot</strong> — Telegram-бот для фитнес-трекинга</div>
             </div>
         </div>
@@ -1042,9 +1060,217 @@
 
 </div>
 
+<div class="changelog-wrap" id="changelog-en" style="display:none;">
+
+    <!-- ======= JULY 2026 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>July 2026</h2>
+            <div class="month-line"></div>
+            <span class="month-count">26 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">Jul 22</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">📷 <strong>AR workout via camera</strong> — 4 exercises (push-ups, squats, pull-ups, crunches), real-time rep counting right on your phone</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 22</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">🔒 <strong>Privacy:</strong> video never leaves the device — recognition via Google MediaPipe Pose, only the final rep count is sent to the server</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 22</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">🎮 <strong>Camera RPG mechanics:</strong> 5 rounds with 90-sec rest, monster counter-attacks (speed based on rank), pauses at 20/40/60/80% HP, Storm Mode ⚡ no-rest for veterans</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 22</div><div class="entry-card"><span class="tag tag-ui">UI</span><div class="entry-text">📊 <strong>Minimalist theme:</strong> workout without monsters — time bar instead of HP bar. Guild, Shop and Arena are hidden, interface focuses on progress</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 22</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">☣️ <strong>STALION</strong> — separate bot in post-apocalyptic Soviet setting. 19 monsters (Necro-slime → Necro-Titan), 3 raid bosses, currency in rubles, entire UI renamed to USSR theme</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 22</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Ranks received classes and levels — progression became more detailed</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 21</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Bot switched to Webhook — faster and more stable responses. Launch time reduced from 25 to ~10 seconds</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 18</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Five new monsters: <strong>Scarecrow, Plague Rat, Drowned One, Orc Warrior, Werewolf</strong></div></div></div>
+        <div class="entry"><div class="entry-date">Jul 18</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Arena: hit log in battle, match start notification and banner</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 17</div><div class="entry-card"><span class="tag tag-fix">Fix</span><div class="entry-text">Text exercise commands saved immediately — no extra confirmation step</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 17</div><div class="entry-card"><span class="tag tag-fix">Fix</span><div class="entry-text">Actual monster defeat reward now shown in message and hunter's log</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 15</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Text exercise input in bot chat and voice workout recognition</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 15</div><div class="entry-card"><span class="tag tag-ui">UI</span><div class="entry-text">Daily charts became scrollable — more data on screen</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 15</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Links to <strong>YouTube and TikTok</strong> SportBot added in settings</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 13</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Weekly top auto-published to tavern chat</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 10</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Secret promo code for website readers — valid until end of July. Enter <strong>WEB-SPORTBOT-07-26</strong> in community chat for a reward 🤫</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 9</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Achievement category <strong>Potions</strong> (🧪) — rewards for using potions in battles</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 9</div><div class="entry-card"><span class="tag tag-fix">Fix</span><div class="entry-text">Unclaimed rewards counter now only counts active ones — matches the visible list</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 9</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Battle modal in Hero profile opens immediately after logging an exercise</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 8</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">"Subscribe" button on player profiles — follow directly from their guest profile</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 7</div><div class="entry-card"><span class="tag tag-balance">Balance</span><div class="entry-text">Normalization of exercise coefficients (push-ups = 1.0) and recalculated rank thresholds</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 7</div><div class="entry-card"><span class="tag tag-ui">UI</span><div class="entry-text">Streak bar labels in stats, link to leaderboard "Streak" tab</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 5</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Feminine rank name variants — bot uses correct gender form per player</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 5</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Hero page: exercise buttons (2×2) with stepper popup for quick rep input</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 3</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Training Program</strong> page in WebApp (/program)</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 3</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Top-3 leaderboard players get gold in weekly report; referrer gets +10 gold on new player registration</div></div></div>
+    </div>
+
+    <!-- ======= JUNE 2026 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>June 2026</h2>
+            <div class="month-line"></div>
+            <span class="month-count">20 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">Jun 30</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Streak restore for gold — button in workout calendar</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 30</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">PvP Arena achievements — wins, losses, match count (ARENA category)</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 29</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Chrono-Seal</strong> — artifact to extend raid boss timer for gold</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 29</div><div class="entry-card"><span class="tag tag-ui">UI</span><div class="entry-text">"Hunter's Log" button replaces participant list in raid boss message</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 26</div><div class="entry-card"><span class="tag tag-ui">UI</span><div class="entry-text">WebApp: safe area on Android, admin button in settings, stats removed from navbar</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 25</div><div class="entry-card"><span class="tag tag-ui">UI</span><div class="entry-text">Fullscreen mini-app with safe area insets for iPhone with Dynamic Island</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 25</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Tavern:</strong> drink beer (jokes and ratings in 3 languages), dice game</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 25</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Payment via <strong>Telegram Payments (bePaid, BYN)</strong> — buy gold inside Telegram</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 24</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>PvP Arena</strong> — 30-minute 1v1 duels via Telegram Mini App; winner gets gold</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 24</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Onboarding: guild master quest, Giant Rat spawn, Hero hint</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 23</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Telegram Stars</strong> payment — automatic gold top-up</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 23</div><div class="entry-card"><span class="tag tag-ui">UI</span><div class="entry-text">Leaderboard: pinned "My Position" row, Streak / Workouts tabs</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 22</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Cosmetic shop</strong> — nickname colors, badges and titles in leaderboard</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 22</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Top-5 achievements for specific raid bosses</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 22</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Community promo code — SOCIAL_COMMUNITY achievement</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 22</div><div class="entry-card"><span class="tag tag-ui">UI</span><div class="entry-text">Guild page: quest time progress bar, participant list, adventure button</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 19</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Raid boss launch history (run_number) — Hunter's Log shows past raids</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 19</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Yandex Music</strong> playlist "Ballads of the Wanderer"</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 18</div><div class="entry-card"><span class="tag tag-ui">UI</span><div class="entry-text">Squad icon and member count merged into one clickable row</div></div></div>
+        <div class="entry"><div class="entry-date">Jun 23</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Monster <strong>Stalion</strong> added to the bestiary</div></div></div>
+    </div>
+
+    <!-- ======= MAY 2026 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>May 2026</h2>
+            <div class="month-line"></div>
+            <span class="month-count">7 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">May</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>WebApp (Telegram Mini App)</strong> — full-featured bot interface inside Telegram</div></div></div>
+        <div class="entry"><div class="entry-date">May</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Hero</strong> page in WebApp — stats, XP, HP, current monster</div></div></div>
+        <div class="entry"><div class="entry-date">May</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Arena</strong> page in WebApp — duel queue, match status</div></div></div>
+        <div class="entry"><div class="entry-date">May</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Calendar</strong> page — visual workout tracker by day</div></div></div>
+        <div class="entry"><div class="entry-date">May</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Leaderboard</strong> with filters by exercise and period</div></div></div>
+        <div class="entry"><div class="entry-date">May</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Bazaar</strong> — potions, upgrades and cosmetics shop (guild shop rebrand)</div></div></div>
+        <div class="entry"><div class="entry-date">May</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Raid boss reward summary published to community chat</div></div></div>
+    </div>
+
+    <!-- ======= APRIL 2026 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>April 2026</h2>
+            <div class="month-line"></div>
+            <span class="month-count">5 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">April</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Raid Bosses</strong> — team battles: damage is total reps from all participants</div></div></div>
+        <div class="entry"><div class="entry-date">April</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Guild Quests</strong> — daily tasks for the entire community</div></div></div>
+        <div class="entry"><div class="entry-date">April</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Guild shop: damage, XP and streak potions</div></div></div>
+        <div class="entry"><div class="entry-date">April</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>RPG Adventures</strong> — interactive stories with physical challenges</div></div></div>
+        <div class="entry"><div class="entry-date">April</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Hunter's Log — attack, damage and raid boss reward history</div></div></div>
+    </div>
+
+    <!-- ======= MARCH 2026 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>March 2026</h2>
+            <div class="month-line"></div>
+            <span class="month-count">6 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">Mar 9</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Achievement congratulations — bot sends a confetti message</div></div></div>
+        <div class="entry"><div class="entry-date">Mar 8</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Weekly report with personal stats and leaderboard position</div></div></div>
+        <div class="entry"><div class="entry-date">Mar 7</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Streaks — consecutive training days system with bonuses</div></div></div>
+        <div class="entry"><div class="entry-date">Mar 6</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Profile editing — name, gender, avatar</div></div></div>
+        <div class="entry"><div class="entry-date">Mar 4</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Daily progress — workout summary at end of day</div></div></div>
+        <div class="entry"><div class="entry-date">Mar 2</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Day summary — automatic results message at end of day</div></div></div>
+    </div>
+
+    <!-- ======= FEBRUARY 2026 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>February 2026</h2>
+            <div class="month-line"></div>
+            <span class="month-count">3 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">Feb 19</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Rivals — compare results with other players</div></div></div>
+        <div class="entry"><div class="entry-date">Feb 9</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Exercise <strong>Crunches</strong> — counter, stats and achievements</div></div></div>
+        <div class="entry"><div class="entry-date">Feb 3</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Migrated to <strong>Cloud Run (GCP)</strong> — faster and more reliable</div></div></div>
+    </div>
+
+    <!-- ======= JANUARY 2026 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>January 2026</h2>
+            <div class="month-line"></div>
+            <span class="month-count">2 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">Jan 7</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Subscriptions</strong> — follow other players and track their progress</div></div></div>
+        <div class="entry"><div class="entry-date">Jan 5</div><div class="entry-card"><span class="tag tag-ui">UI</span><div class="entry-text">Pagination in leaderboard and exercise history</div></div></div>
+    </div>
+
+    <!-- ======= DECEMBER 2025 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>December 2025</h2>
+            <div class="month-line"></div>
+            <span class="month-count">3 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">Dec 8</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Rank system</strong> — 30 ranks from Recruit to Legend, promoted by XP</div></div></div>
+        <div class="entry"><div class="entry-date">Dec 3</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">User tags — labels for segmentation and personalization</div></div></div>
+        <div class="entry"><div class="entry-date">Dec 1</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Deploy via <strong>Docker + GCP App Engine</strong></div></div></div>
+    </div>
+
+    <!-- ======= NOVEMBER 2025 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>November 2025</h2>
+            <div class="month-line"></div>
+            <span class="month-count">3 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">Nov 6</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Normalized exercise types — unified API for all activity types</div></div></div>
+        <div class="entry"><div class="entry-date">Nov 5</div><div class="entry-card"><span class="tag tag-fix">Fix</span><div class="entry-text">Global error handler — readable messages instead of stack traces</div></div></div>
+        <div class="entry"><div class="entry-date">Nov 3</div><div class="entry-card"><span class="tag tag-fix">Fix</span><div class="entry-text">Fixed training program calculation</div></div></div>
+    </div>
+
+    <!-- ======= OCTOBER 2025 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>October 2025</h2>
+            <div class="month-line"></div>
+            <span class="month-count">2 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">Oct 13</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Player profile</strong> — stats, rank, achievements on one screen</div></div></div>
+        <div class="entry"><div class="entry-date">Oct 3</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Motivational phrases — bot congratulates with a random quote after workout</div></div></div>
+    </div>
+
+    <!-- ======= SEPTEMBER 2025 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>September 2025</h2>
+            <div class="month-line"></div>
+            <span class="month-count">3 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">Sep 19</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Motivation — personalized messages based on workout history</div></div></div>
+        <div class="entry"><div class="entry-date">Sep 7</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Google Cloud Platform</strong> integration — webhook and hosting</div></div></div>
+        <div class="entry"><div class="entry-date">Sep 5</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Leaderboard</strong> — player ranking by rep count</div></div></div>
+    </div>
+
+    <!-- ======= AUGUST 2025 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>August 2025</h2>
+            <div class="month-line"></div>
+            <span class="month-count">3 updates</span>
+        </div>
+        <div class="entry"><div class="entry-date">Aug 31</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text"><strong>Training Program</strong> — personal plan with progressive overload</div></div></div>
+        <div class="entry"><div class="entry-date">Aug 20</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Per-workout maximum records — personal bests for each exercise</div></div></div>
+        <div class="entry"><div class="entry-date">Aug 20</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">CI/CD via GitHub Actions — automated build verification</div></div></div>
+    </div>
+
+    <!-- ======= JULY 2025 ======= -->
+    <div class="month-block">
+        <div class="month-header">
+            <h2>July 2025</h2>
+            <div class="month-line"></div>
+            <span class="month-count">Launch</span>
+        </div>
+        <div class="entry"><div class="entry-date">Jul 21</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">User registration and workout result logging</div></div></div>
+        <div class="entry"><div class="entry-date">Jul 20</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">Exercise support: <strong>push-ups, pull-ups, squats</strong></div></div></div>
+        <div class="entry"><div class="entry-date">Jul 3</div><div class="entry-card"><span class="tag tag-feat">New</span><div class="entry-text">🚀 <strong>SportBot first launch</strong> — Telegram fitness tracking bot</div></div></div>
+    </div>
+
+</div>
+
 <footer>
-    <p>SportBot &copy; 2025–2026 &nbsp;·&nbsp; <a href="index.html">Главная</a> &nbsp;·&nbsp; <a href="guide.html">Гайд</a> &nbsp;·&nbsp; <a href="commands.html">Команды</a></p>
+    <p>SportBot &copy; 2025–2026 &nbsp;·&nbsp; <a href="index.html" data-i18n="footer.home">Главная</a> &nbsp;·&nbsp; <a href="guide.html" data-i18n="footer.guide">Гайд</a> &nbsp;·&nbsp; <a href="commands.html" data-i18n="footer.commands">Команды</a></p>
 </footer>
 
+<script src="i18n.js"></script>
 </body>
 </html>

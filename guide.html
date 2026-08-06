@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Руководство SportBot | Полная документация</title>
-    <meta name="description" content="Полное руководство по SportBot — геймифицированному фитнес-боту для Telegram. Достижения, рейд-боссы, монстры, стрики, RPG-механики. Начни тренироваться и побеждай!">
+    <title id="meta-title">Руководство SportBot | Полная документация</title>
+    <meta id="meta-desc" name="description" content="Полное руководство по SportBot — геймифицированному фитнес-боту для Telegram. Достижения, рейд-боссы, монстры, стрики, RPG-механики. Начни тренироваться и побеждай!">
     <meta name="keywords" content="SportBot руководство, фитнес бот telegram инструкция, достижения SportBot, рейд-боссы telegram, стрик тренировки">
     <meta name="author" content="Denis Kaydunov">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Руководство SportBot | Полная документация">
-    <meta property="og:description" content="Всё о механиках SportBot: достижения, рейд-боссы, монстры, стрики, RPG-система. Начни прямо сейчас!">
+    <meta id="og-title" property="og:title" content="Руководство SportBot | Полная документация">
+    <meta id="og-desc" property="og:description" content="Всё о механиках SportBot: достижения, рейд-боссы, монстры, стрики, RPG-система. Начни прямо сейчас!">
     <meta property="og:url" content="https://denkaydunov.github.io/SportBot-site/guide.html">
-    <meta property="og:locale" content="ru_RU">
+    <meta id="og-locale" property="og:locale" content="ru_RU">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Руководство SportBot">
-    <meta name="twitter:description" content="Полное руководство по геймифицированному фитнес-боту для Telegram">
+    <meta id="tw-title" name="twitter:title" content="Руководство SportBot">
+    <meta id="tw-desc" name="twitter:description" content="Полное руководство по геймифицированному фитнес-боту для Telegram">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://denkaydunov.github.io/SportBot-site/guide.html">
@@ -96,15 +96,20 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.1rem;
             list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
         }
 
         .nav-links a {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.88rem;
             transition: color 0.3s;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -391,9 +396,26 @@
             background-size: 100% 30%;
             background-position: 0 90%;
         }
+
+        #lang-toggle {
+            background: transparent;
+            border: 1.5px solid rgba(255,255,255,0.4);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+            line-height: 1;
+        }
+        #lang-toggle:hover, #lang-toggle.lang-active-en {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
     </style>
 </head>
-<body>
+<body data-page="guide">
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
@@ -403,16 +425,17 @@
             <nav>
                 <button class="menu-toggle" onclick="document.querySelector('#guide-nav').classList.toggle('open')">☰</button>
                 <ul class="nav-links" id="guide-nav">
-                    <li><a href="#commands">Команды</a></li>
-                    <li><a href="#ranks">Ранги</a></li>
-                    <li><a href="#achievements">Достижения</a></li>
-                    <li><a href="#battles">Битвы</a></li>
-                    <li><a href="#guild-quest">Гильдия</a></li>
-                    <li><a href="#social">Рейтинг</a></li>
-                    <li><a href="#adventure">Приключение</a></li>
-                    <li><a href="commands.html">📖 Все команды</a></li>
-                    <li><a href="changelog.html">🆕 Обновления</a></li>
-                    <li><a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank">⚔️ Бот</a></li>
+                    <li><a href="#commands" data-i18n="guide.nav.commands">Команды</a></li>
+                    <li><a href="#ranks" data-i18n="guide.nav.ranks">Ранги</a></li>
+                    <li><a href="#achievements" data-i18n="guide.nav.achievements">Достижения</a></li>
+                    <li><a href="#battles" data-i18n="guide.nav.battles">Битвы</a></li>
+                    <li><a href="#guild-quest" data-i18n="guide.nav.guild">Гильдия</a></li>
+                    <li><a href="#social" data-i18n="guide.nav.social">Рейтинг</a></li>
+                    <li><a href="#adventure" data-i18n="guide.nav.adventure">Приключение</a></li>
+                    <li><a href="commands.html" data-i18n="guide.nav.all_commands">📖 Все команды</a></li>
+                    <li><a href="changelog.html" data-i18n="guide.nav.updates">🆕 Обновления</a></li>
+                    <li><a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank" data-i18n="nav.bot">⚔️ Бот</a></li>
+                    <li><button id="lang-toggle" onclick="toggleLang()">🇷🇺 RU</button></li>
                 </ul>
             </nav>
         </div>
@@ -420,26 +443,26 @@
 
     <div class="container">
         <section id="intro">
-            <h1>📖 Полное руководство</h1>
-            <p style="font-size: 1.25rem; color: var(--gray); margin-bottom: 2rem;">
+            <h1 data-i18n="guide.hero.h1">📖 Полное руководство</h1>
+            <p style="font-size: 1.25rem; color: var(--gray); margin-bottom: 2rem;" data-i18n="guide.hero.p">
                 Всё что нужно знать о SportBot — от первых шагов до легендарных достижений
             </p>
 
             <nav style="background: #1A1A1A; border-radius: 16px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(127,217,87,0.2);">
-                <p style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1.5rem; color: #7FD957; letter-spacing: 0.05em; text-transform: uppercase;">Содержание</p>
+                <p style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1.5rem; color: #7FD957; letter-spacing: 0.05em; text-transform: uppercase;" data-i18n="guide.toc.title">Содержание</p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.75rem;">
-                    <a href="#commands" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📝</span> Команды и профиль</a>
-                    <a href="#ranks" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚡</span> Система рангов и опыт</a>
-                    <a href="#achievements" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">🏆</span> Достижения</a>
-                    <a href="#battles" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚔️</span> Монстры и рейд-боссы</a>
-                    <a href="#guild-quest" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">🏰</span> Гильдия — квесты и зелья</a>
-                    <a href="#adventure" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📜</span> RPG-приключения</a>
-                    <a href="#camera" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📷</span> AR-тренировки через камеру</a>
-                    <a href="#minimal" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📊</span> Минималистичная тема</a>
-                    <a href="#stalion" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#3a2010; border-radius:10px; text-decoration:none; color:#d4c89a; border: 1px solid #c0392b; transition:background 0.2s;" onmouseover="this.style.background='#4a2a18'" onmouseout="this.style.background='#3a2010'"><span style="font-size:1.3rem">☣️</span> СТАЛИОН — тёмный СССР</a>
-                    <a href="#social" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">👥</span> Рейтинг, отряд, подписки</a>
-                    <a href="#arena" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚔️</span> Арена PvP</a>
-                    <a href="#settings" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚙️</span> Настройки</a>
+                    <a href="#commands" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📝</span> <span data-i18n="guide.toc.commands">Команды и профиль</span></a>
+                    <a href="#ranks" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚡</span> <span data-i18n="guide.toc.ranks">Система рангов и опыт</span></a>
+                    <a href="#achievements" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">🏆</span> <span data-i18n="guide.toc.achievements">Достижения</span></a>
+                    <a href="#battles" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚔️</span> <span data-i18n="guide.toc.monsters">Монстры и рейд-боссы</span></a>
+                    <a href="#guild-quest" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">🏰</span> <span data-i18n="guide.toc.guild">Гильдия — квесты и зелья</span></a>
+                    <a href="#adventure" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📜</span> <span data-i18n="guide.toc.adventure">RPG-приключения</span></a>
+                    <a href="#camera" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📷</span> <span data-i18n="guide.toc.camera">AR-тренировки через камеру</span></a>
+                    <a href="#minimal" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">📊</span> <span data-i18n="guide.toc.minimal">Минималистичная тема</span></a>
+                    <a href="#stalion" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#3a2010; border-radius:10px; text-decoration:none; color:#d4c89a; border: 1px solid #c0392b; transition:background 0.2s;" onmouseover="this.style.background='#4a2a18'" onmouseout="this.style.background='#3a2010'"><span style="font-size:1.3rem">☣️</span> <span data-i18n="guide.toc.stalion">СТАЛИОН — тёмный СССР</span></a>
+                    <a href="#social" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">👥</span> <span data-i18n="guide.toc.social">Рейтинг, отряд, подписки</span></a>
+                    <a href="#arena" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚔️</span> <span data-i18n="guide.toc.arena">Арена PvP</span></a>
+                    <a href="#settings" style="display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; background:#2a2a2a; border-radius:10px; text-decoration:none; color:#fff; transition:background 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#2a2a2a'"><span style="font-size:1.3rem">⚙️</span> <span data-i18n="guide.toc.settings">Настройки</span></a>
                 </div>
             </nav>
         </section>
@@ -1081,11 +1104,12 @@
     <footer>
         <p><strong>SportBot</strong> — Превращай тренировки в достижения!</p>
         <p style="margin-top: 1rem; opacity: 0.8;">
-            <a href="index.html">Главная</a> |
-            <a href="changelog.html">Обновления</a> |
+            <a href="index.html" data-i18n="footer.home">Главная</a> |
+            <a href="changelog.html" data-i18n="nav.updates">Обновления</a> |
             <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank">Telegram</a>
         </p>
         <p style="margin-top: 1rem; opacity: 0.6;">&copy; 2026 SportBot</p>
     </footer>
+    <script src="i18n.js"></script>
 </body>
 </html>
