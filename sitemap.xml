@@ -1,27 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://denkaydunov.github.io/SportBot-site/</loc>
-        <lastmod>2026-07-28</lastmod>
+        <loc>https://denkaydunov.github.io/sportbot-site/</loc>
+        <lastmod>2026-09-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://denkaydunov.github.io/SportBot-site/guide.html</loc>
+        <loc>https://denkaydunov.github.io/sportbot-site/guide.html</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://denkaydunov.github.io/SportBot-site/commands.html</loc>
+        <loc>https://denkaydunov.github.io/sportbot-site/commands.html</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://denkaydunov.github.io/SportBot-site/changelog.html</loc>
+        <loc>https://denkaydunov.github.io/sportbot-site/changelog.html</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/sportbot-site/blog/</loc>
+        <lastmod>2026-09-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/sportbot-site/blog/trenirovki-doma.html</loc>
+        <lastmod>2026-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/sportbot-site/blog/kalistenik.html</loc>
+        <lastmod>2026-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/sportbot-site/blog/otzhimaniya.html</loc>
+        <lastmod>2026-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/sportbot-site/blog/podtyagivaniya.html</loc>
+        <lastmod>2026-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/sportbot-site/blog/prisedaniya.html</loc>
+        <lastmod>2026-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/sportbot-site/blog/press-planka.html</loc>
+        <lastmod>2026-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

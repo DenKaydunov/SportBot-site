@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог о тренировках | SportBot — Калистеника, отжимания, подтягивания</title>
+    <meta name="description" content="Блог SportBot о тренировках дома и на улице: калистеника, отжимания, подтягивания, приседания, пресс и планка. Статьи для начинающих и продвинутых спортсменов.">
+    <meta name="keywords" content="тренировки дома, калистеника, отжимания, подтягивания, приседания, пресс, планка, упражнения своим весом">
+    <meta name="author" content="SportBot">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://denkaydunov.github.io/sportbot-site/blog/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Блог SportBot — Тренировки дома и калистеника">
+    <meta property="og:description" content="Статьи о тренировках дома: калистеника, отжимания, подтягивания, приседания, пресс, планка.">
+    <meta property="og:url" content="https://denkaydunov.github.io/sportbot-site/blog/">
+    <meta property="og:locale" content="ru_RU">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Блог SportBot — Тренировки без зала">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Блог SportBot о тренировках",
+      "description": "Статьи о тренировках дома и калистенике",
+      "url": "https://denkaydunov.github.io/sportbot-site/blog/",
+      "publisher": {"@type": "Organization", "name": "SportBot", "url": "https://denkaydunov.github.io/sportbot-site/"}
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #7FD957; --dark: #1A1A1A; --white: #fff; --card-bg: #232323; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--dark); color: #e0e0e0; line-height: 1.8; }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        header { background: #111; border-bottom: 2px solid var(--primary); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+        nav a { color: #ccc; margin-left: 1.5rem; font-size: 0.95rem; }
+
+        .hero { background: linear-gradient(135deg, #1e2e1a, #1a1a2e); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #333; }
+        .hero h1 { font-size: 2.4rem; color: var(--white); margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; color: #aaa; max-width: 600px; margin: 0 auto; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+        .section-title { font-size: 1.2rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; margin-bottom: 1.5rem; }
+
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+        .article-card { background: var(--card-bg); border-radius: 12px; padding: 1.5rem; border: 1px solid #333; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
+        .article-card:hover { border-color: var(--primary); transform: translateY(-3px); text-decoration: none; }
+        .article-card .tag { display: inline-block; background: rgba(127,217,87,0.15); color: var(--primary); font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.7rem; border-radius: 20px; margin-bottom: 0.8rem; }
+        .article-card h2 { font-size: 1.1rem; color: var(--white); margin-bottom: 0.7rem; line-height: 1.4; }
+        .article-card p { font-size: 0.9rem; color: #aaa; flex: 1; margin-bottom: 1rem; }
+        .article-card .read-more { color: var(--primary); font-size: 0.85rem; font-weight: 600; margin-top: auto; }
+
+        .cta-block { background: linear-gradient(135deg, #1e2e1a, #232323); border: 2px solid var(--primary); border-radius: 12px; padding: 2.5rem; text-align: center; }
+        .cta-block h2 { font-size: 1.6rem; color: var(--white); margin-bottom: 0.8rem; }
+        .cta-block p { color: #ccc; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .btn { display: inline-block; background: var(--primary); color: #111; font-weight: 700; padding: 0.9rem 2rem; border-radius: 8px; font-size: 1rem; }
+        .btn:hover { background: #6BC745; text-decoration: none; }
+
+        footer { background: #111; border-top: 1px solid #333; padding: 2rem; text-align: center; color: #666; font-size: 0.9rem; }
+        footer a { color: #888; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.7rem; } .articles-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../" class="logo">⚔️ SportBot</a>
+    <nav>
+        <a href="../guide.html">Руководство</a>
+        <a href="../commands.html">Команды</a>
+        <a href="./" style="color: var(--primary)">Блог</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Блог о тренировках</h1>
+    <p>Статьи о домашних тренировках, калистенике и упражнениях с собственным весом — для тех, кто хочет быть в форме без зала</p>
+</div>
+
+<div class="container">
+    <div class="section-title">Все статьи — 6 материалов</div>
+
+    <div class="articles-grid">
+        <a href="trenirovki-doma.html" class="article-card">
+            <div class="tag">Тренировки дома</div>
+            <h2>Тренировки дома: полная программа без тренажёров</h2>
+            <p>Базовые упражнения, программа на 4 недели и главные принципы домашних тренировок. Всё что нужно — свободное место и 30 минут.</p>
+            <div class="read-more">Читать статью →</div>
+        </a>
+
+        <a href="kalistenik.html" class="article-card">
+            <div class="tag">Калистеника</div>
+            <h2>Калистеника для начинающих: тренировки своим весом</h2>
+            <p>Что такое калистеника, базовые упражнения, прогрессии от новичка до элиты и программа тренировок для начинающих.</p>
+            <div class="read-more">Читать статью →</div>
+        </a>
+
+        <a href="otzhimaniya.html" class="article-card">
+            <div class="tag">Отжимания</div>
+            <h2>Отжимания: техника, виды и программа для роста</h2>
+            <p>Правильная техника отжиманий, типичные ошибки, 8 видов отжиманий и программа от нуля до 50 повторений за 8 недель.</p>
+            <div class="read-more">Читать статью →</div>
+        </a>
+
+        <a href="podtyagivaniya.html" class="article-card">
+            <div class="tag">Подтягивания</div>
+            <h2>Подтягивания: как научиться с нуля и прогрессировать</h2>
+            <p>Пошаговые прогрессии от нуля до первого подтягивания. Австралийские, негативные, с резинкой — весь путь по шагам.</p>
+            <div class="read-more">Читать статью →</div>
+        </a>
+
+        <a href="prisedaniya.html" class="article-card">
+            <div class="tag">Приседания</div>
+            <h2>Приседания: правильная техника, виды и программа</h2>
+            <p>Техника приседаний своим весом, 6 видов (включая пистолет), типичные ошибки и 4-недельная программа для ног.</p>
+            <div class="read-more">Читать статью →</div>
+        </a>
+
+        <a href="press-planka.html" class="article-card">
+            <div class="tag">Пресс и планка</div>
+            <h2>Пресс и планка: упражнения для сильного кора</h2>
+            <p>8 лучших упражнений для кора, правильная техника планки, мифы о прессе и 30-дневная программа-вызов.</p>
+            <div class="read-more">Читать статью →</div>
+        </a>
+    </div>
+
+    <div class="cta-block">
+        <h2>Тренируйтесь и зарабатывайте достижения</h2>
+        <p>SportBot превращает тренировки в RPG-игру. Записывайте отжимания, подтягивания, приседания, планку — получайте опыт, достижения и сражайтесь с рейд-боссами. 124+ достижений. Бесплатно.</p>
+        <a href="https://t.me/SquatMasterBot?start=utm_blog_index" target="_blank" class="btn">⚔️ Попробовать SportBot</a>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 <a href="../">SportBot</a> — Геймифицированный фитнес в Telegram</p>
+</footer>
+
+</body>
+</html>

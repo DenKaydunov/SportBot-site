@@ -565,6 +565,30 @@
             left: 1.5rem;
             z-index: 999;
         }
+        #blog-link {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.5rem;
+            z-index: 999;
+        }
+        #blog-link a {
+            background: rgba(26,26,26,0.85);
+            border: 1.5px solid rgba(255,255,255,0.4);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            text-decoration: none;
+            backdrop-filter: blur(6px);
+            transition: border-color 0.2s, color 0.2s;
+            line-height: 1;
+            display: inline-block;
+        }
+        #blog-link a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
         #lang-toggle {
             background: rgba(26,26,26,0.85);
             border: 1.5px solid rgba(255,255,255,0.4);
@@ -588,6 +612,9 @@
     <!-- Lang switcher -->
     <div id="lang-widget">
         <button id="lang-toggle" onclick="toggleLang()">🇷🇺 RU</button>
+    </div>
+    <div id="blog-link">
+        <a href="blog/">📝 Блог</a>
     </div>
     <section class="hero">
         <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
@@ -914,6 +941,7 @@
                 <a href="https://tg.pulse.is/SquatMasterBot?start=68272210e7d3bb3e50024c24|user_referrer_id=676150892" target="_blank" data-i18n="index.footer.links.start">Запустить бота</a>
                 <a href="guide.html" data-i18n="index.footer.links.guide">Полное руководство</a>
                 <a href="changelog.html" data-i18n="index.footer.links.log">История обновлений</a>
+                <a href="blog/">Блог о тренировках</a>
             </div>
 
             <div class="footer-section">
