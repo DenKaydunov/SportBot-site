@@ -26,16 +26,28 @@ Then open `http://localhost:8000`.
 
 ## Site Structure
 
-Three HTML pages, each self-contained (inline CSS, minimal vanilla JS):
+Four HTML pages + SEO blog, each self-contained (inline CSS, minimal vanilla JS):
 
 - **`index.html`** — Landing page: hero video background, feature grid, raid boss section, CTA buttons
 - **`guide.html`** — User documentation: rank system, achievements, battle system, guild quests, social features
 - **`commands.html`** — Full command reference (largest file, ~2000 lines)
+- **`changelog.html`** — Update history
+
+SEO Blog (`blog/`):
+- **`blog/index.html`** — Blog index listing all articles
+- **`blog/trenirovki-doma.html`** — "тренировки дома" keyword
+- **`blog/kalistenik.html`** — "калистеника" keyword
+- **`blog/otzhimaniya.html`** — "отжимания" keyword
+- **`blog/podtyagivaniya.html`** — "подтягивания" keyword
+- **`blog/prisedaniya.html`** — "приседания" keyword
+- **`blog/press-planka.html`** — "пресс планка" keyword
 
 Supporting assets:
 - `img/monster/` — Monster/boss sprite artwork (16 images, ~61MB)
 - `video/` — MP4 hero videos for landing page backgrounds
-- `robots.txt` + `sitemap.xml` — SEO configuration
+- `robots.txt` + `sitemap.xml` — SEO configuration (sitemap includes all blog URLs)
+
+**Canonical URL base:** `https://denkaydunov.github.io/SportBot-site/` (note capital S and B — must match exactly in canonical, og:url, and sitemap)
 
 ## Architecture & Conventions
 
