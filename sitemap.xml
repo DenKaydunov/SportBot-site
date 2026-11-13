@@ -138,4 +138,34 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://denkaydunov.github.io/SportBot-site/blog/razminka-pered-trenirovkoj.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/SportBot-site/blog/vypady.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/SportBot-site/blog/vosstanovlenie-posle-trenirovki.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/SportBot-site/blog/skolko-otzhimaniy-norma.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://denkaydunov.github.io/SportBot-site/blog/kak-ne-brosit-trenirovki.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
